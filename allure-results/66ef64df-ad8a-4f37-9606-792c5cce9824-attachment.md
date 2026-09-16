@@ -1,0 +1,2636 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: learning.spec.js >> make my trip
+- Location: tests\learning.spec.js:35:5
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('//span[@class="commonModal__close"]')
+    - locator resolved to <span data-cy="closeModal" class="commonModal__close"></span>
+  - attempting click action
+    - waiting for element to be visible, enabled and stable
+    - element is not stable
+  - retrying click action
+    - waiting for element to be visible, enabled and stable
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - img "Make My Trip" [ref=e8] [cursor=pointer]
+      - list [ref=e9]:
+        - listitem [ref=e10] [cursor=pointer]:
+          - generic [ref=e13]:
+            - paragraph [ref=e14]: List Your Property
+            - paragraph [ref=e15]: Grow your business!
+        - listitem [ref=e16] [cursor=pointer]:
+          - img "myBizLogo" [ref=e18]
+          - generic [ref=e19]:
+            - paragraph [ref=e20]: Introducing myBiz
+            - paragraph [ref=e21]: Business Travel Solution
+        - listitem [ref=e22] [cursor=pointer]:
+          - generic [ref=e25]:
+            - paragraph [ref=e26]: My Trips
+            - paragraph [ref=e27]: Manage your bookings
+        - listitem [ref=e28] [cursor=pointer]:
+          - generic "Wishlist" [ref=e30]
+          - generic [ref=e31]:
+            - paragraph [ref=e32]: Wishlist
+            - paragraph [ref=e33]: Save favourites
+        - listitem [ref=e34] [cursor=pointer]:
+          - paragraph [ref=e39]: Login or Create Account
+        - listitem [ref=e40] [cursor=pointer]:
+          - generic [ref=e41]:
+            - generic [ref=e43]: INR
+            - text: "|"
+            - generic [ref=e44]: English
+    - generic:
+      - navigation [ref=e48]:
+        - list [ref=e49]:
+          - listitem [ref=e50]:
+            - link "Flights" [ref=e52] [cursor=pointer]:
+              - /url: https://www.makemytrip.com/flights/
+          - listitem [ref=e56]:
+            - link "Hotels" [ref=e58] [cursor=pointer]:
+              - /url: https://www.makemytrip.com/hotels/
+          - listitem [ref=e62]:
+            - link "Villas & Homestays" [ref=e64] [cursor=pointer]:
+              - /url: https://www.makemytrip.com/homestays/
+          - listitem [ref=e68]:
+            - link "Holiday Packages" [ref=e70] [cursor=pointer]:
+              - /url: https://www.makemytrip.com/holidays-india/
+          - listitem [ref=e74]:
+            - link "Trains" [ref=e76] [cursor=pointer]:
+              - /url: https://www.makemytrip.com/railways/
+          - listitem [ref=e80]:
+            - link "Buses" [ref=e82] [cursor=pointer]:
+              - /url: https://www.makemytrip.com/bus-tickets/
+          - listitem [ref=e86]:
+            - link "Cabs" [ref=e88] [cursor=pointer]:
+              - /url: https://www.makemytrip.com/cabs/
+          - listitem [ref=e92]:
+            - link "Tours & Attractions" [ref=e94] [cursor=pointer]:
+              - /url: https://www.makemytrip.com/activities/
+          - listitem [ref=e98]:
+            - link "Visa" [ref=e100] [cursor=pointer]:
+              - /url: https://visa.makemytrip.com/
+          - listitem [ref=e104]:
+            - link "Cruise" [ref=e106] [cursor=pointer]:
+              - /url: https://www.makemytrip.com/cruise/
+            - generic [ref=e110]: new
+          - listitem [ref=e111]:
+            - link "Forex Card & Currency" [ref=e113] [cursor=pointer]:
+              - /url: https://www.makemytrip.com/forex/
+          - listitem [ref=e117]:
+            - link "Travel Insurance" [ref=e119] [cursor=pointer]:
+              - /url: https://www.makemytrip.com/travel-insurance/
+      - generic [ref=e125]:
+        - generic [ref=e126] [cursor=pointer]
+        - list [ref=e128]:
+          - listitem [ref=e129] [cursor=pointer]: Personal Account
+          - listitem [ref=e130] [cursor=pointer]: MyBiz Account
+        - generic [ref=e131]:
+          - textbox [disabled] [ref=e132]
+          - textbox [ref=e133]
+          - generic [ref=e134]:
+            - generic [ref=e135]: Mobile Number
+            - generic [ref=e136]:
+              - paragraph [ref=e138] [cursor=pointer]:
+                - code [ref=e140]: ‎+91
+              - textbox "Enter Mobile Number" [active] [ref=e142]
+          - generic:
+            - button "Continue" [disabled]
+        - paragraph [ref=e143]:
+          - generic [ref=e144]: Or Login/Signup With
+        - generic [ref=e145]:
+          - generic [ref=e147]:
+            - button "Sign in with Google. Opens in new tab" [ref=e149] [cursor=pointer]
+            - generic:
+              - iframe
+              - button "Sign in with Google. Opens in new tab"
+          - img "signInByMailButton" [ref=e159] [cursor=pointer]
+        - paragraph [ref=e161]: By proceeding, you agree to MakeMyTrip's Privacy Policy, User Agreement and T&Cs
+  - generic [ref=e167]:
+    - generic [ref=e171]:
+      - generic [ref=e172]:
+        - list [ref=e173]:
+          - listitem [ref=e174] [cursor=pointer]: One Way
+          - listitem [ref=e176] [cursor=pointer]: Round Trip
+          - listitem [ref=e178] [cursor=pointer]: Multi City
+        - paragraph [ref=e181]:
+          - text: Book
+          - link "International" [ref=e182] [cursor=pointer]:
+            - /url: /international-flights/
+          - text: and
+          - link "Domestic Flights" [ref=e183] [cursor=pointer]:
+            - /url: /flights/
+      - generic [ref=e184]:
+        - generic [ref=e185]:
+          - generic [ref=e187] [cursor=pointer]:
+            - generic [ref=e188]: From
+            - textbox "From DEL, Delhi Airport India" [ref=e189]: Delhi
+            - paragraph [ref=e190]:
+              - generic [ref=e191]: DEL, Delhi Airport India
+          - generic [ref=e192] [cursor=pointer]: ⇌
+          - generic [ref=e194] [cursor=pointer]:
+            - generic [ref=e195]: To
+            - textbox "To BLR, Bengaluru International Airport India" [ref=e196]: Bengaluru
+            - paragraph [ref=e197]:
+              - generic [ref=e198]: BLR, Bengaluru International Airport India
+          - generic [ref=e200] [cursor=pointer]:
+            - generic [ref=e201]: Departure
+            - textbox "Departure 16 Sep'26 Wednesday" [ref=e202]: Tuesday, 15 Sep 2026
+            - paragraph [ref=e203]:
+              - generic [ref=e204]: "16"
+              - text: Sep'26
+            - paragraph [ref=e205]: Wednesday
+          - generic [ref=e208] [cursor=pointer]:
+            - generic [ref=e209]: Return
+            - paragraph [ref=e210]: Tap to add a return date for bigger discounts
+          - generic [ref=e212] [cursor=pointer]:
+            - generic [ref=e213]: Travellers
+            - textbox "Travellers 1 Adult" [ref=e214]: "1"
+            - generic [ref=e215]:
+              - generic [ref=e216]: "1"
+              - paragraph [ref=e217]: Adult
+          - generic [ref=e219] [cursor=pointer]:
+            - generic [ref=e220]: Cabin Class
+            - textbox "Cabin Class Economy/ Premium Economy" [ref=e221]: Economy/Premium Economy
+            - paragraph [ref=e222]: Economy/ Premium Economy
+        - generic [ref=e223]:
+          - generic [ref=e224]:
+            - generic [ref=e225]: Select a special fare
+            - generic [ref=e229]:
+              - generic [ref=e232] [cursor=pointer]:
+                - generic [ref=e233]: Regular
+                - generic [ref=e234]: Regular fares
+              - generic [ref=e237] [cursor=pointer]:
+                - generic [ref=e238]: Student
+                - generic [ref=e239]: Extra discounts/baggage
+              - generic [ref=e242] [cursor=pointer]:
+                - generic [ref=e243]: Armed Forces
+                - generic [ref=e244]: Up to ₹ 600 off
+              - generic [ref=e247] [cursor=pointer]:
+                - generic [ref=e248]: Have a GST number ?
+                - generic [ref=e253]:
+                  - generic [ref=e254]: Upto 10% extra savings!
+                  - generic [ref=e256]: Free Date Change
+                  - generic [ref=e258]: Lower cancellation charges
+                  - generic [ref=e260]: Assured GST invoice
+                  - generic [ref=e262]: Upto 10% extra savings!
+                  - generic [ref=e264]: Free Date Change
+                  - generic [ref=e266]: Lower cancellation charges
+                  - generic [ref=e268]: Assured GST invoice
+              - generic [ref=e272] [cursor=pointer]:
+                - generic [ref=e273]: Senior Citizen
+                - generic [ref=e274]: Up to ₹ 600 off
+              - generic [ref=e277] [cursor=pointer]:
+                - generic [ref=e278]: Doctor and Nurses
+                - generic [ref=e279]: Up to ₹ 600 off
+          - generic [ref=e281]:
+            - generic [ref=e282]: Quick Tools
+            - generic [ref=e284]: Flight Status
+        - checkbox "<font color='#000000'>Add Price Drop Protection</font>" [ref=e290] [cursor=pointer]:
+          - generic [ref=e291]:
+            - checkbox [ref=e294]
+            - generic [ref=e297]:
+              - generic [ref=e298]: Add Price Drop Protection
+              - generic [ref=e300]: Price drops, we’ll refund the difference.
+            - generic [ref=e302]: View Details
+        - paragraph [ref=e306]:
+          - generic [ref=e307] [cursor=pointer]: Search
+    - main [ref=e308]:
+      - main [ref=e309]:
+        - generic [ref=e313]:
+          - generic [ref=e314]:
+            - heading "Offers" [level=2] [ref=e315]
+            - list [ref=e317]:
+              - listitem [ref=e318]:
+                - generic [ref=e319] [cursor=pointer]: All Offers
+              - listitem [ref=e321]:
+                - generic [ref=e322] [cursor=pointer]: Bank Offers
+              - listitem [ref=e324]:
+                - generic [ref=e325] [cursor=pointer]: Flights
+              - listitem [ref=e327]:
+                - generic [ref=e328] [cursor=pointer]: Hotels
+              - listitem [ref=e330]:
+                - generic [ref=e331] [cursor=pointer]: Holidays
+              - listitem [ref=e333]:
+                - generic [ref=e334] [cursor=pointer]: Trains
+              - listitem [ref=e336]:
+                - generic [ref=e337] [cursor=pointer]: Cabs
+              - listitem [ref=e339]:
+                - generic [ref=e340] [cursor=pointer]: Bus
+              - listitem [ref=e342]:
+                - generic [ref=e343] [cursor=pointer]: Forex
+              - listitem [ref=e345]:
+                - generic [ref=e346] [cursor=pointer]: MORE
+            - generic [ref=e349] [cursor=pointer]: View All
+          - generic [ref=e352]:
+            - button "Previous" [ref=e353] [cursor=pointer]
+            - generic [ref=e355]:
+              - generic [ref=e356]:
+                - generic [ref=e359] [cursor=pointer]:
+                  - generic [ref=e364]:
+                    - paragraph [ref=e366]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e367]: T&C's Apply
+                    - paragraph [ref=e368]: Great Connections Sale by IndiGo
+                    - paragraph [ref=e370]: with Flights Starting at ₹3,999* and More!
+                  - generic [ref=e371]: Book Now
+                - generic [ref=e376] [cursor=pointer]:
+                  - generic [ref=e381]:
+                    - paragraph [ref=e383]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e384]: T&C's Apply
+                    - paragraph [ref=e385]: The Only Fest You Need to Fly Business Class!
+                    - paragraph [ref=e387]: Here’s FLAT 10% OFF* for You.
+                  - generic [ref=e388]: Explore Now
+              - generic [ref=e391]:
+                - generic [ref=e394] [cursor=pointer]:
+                  - generic [ref=e399]:
+                    - paragraph [ref=e401]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e402]: T&C's Apply
+                    - paragraph [ref=e403]: "LIVE NOW: Sale by Qatar Airways"
+                    - paragraph [ref=e405]: with Up to 18% OFF* on Business Class Bookings.
+                  - generic [ref=e406]: Book Now
+                - generic [ref=e411] [cursor=pointer]:
+                  - generic [ref=e416]:
+                    - paragraph [ref=e418]:
+                      - text: DOM FLIGHTS
+                      - generic [ref=e419]: T&C's Apply
+                    - paragraph [ref=e420]: "Save Big and Travel Smart:"
+                    - paragraph [ref=e422]: Grab Up to 35% OFF* on Flights, Hotels and Packages.
+                  - generic [ref=e423]:
+                    - generic: Expires 30 Sep 26
+                    - generic [ref=e425]: View Details
+              - generic [ref=e427]:
+                - generic [ref=e430] [cursor=pointer]:
+                  - generic [ref=e435]:
+                    - paragraph [ref=e437]:
+                      - text: INTL HOTELS
+                      - generic [ref=e438]: T&C's Apply
+                    - paragraph [ref=e439]: Best Deals for the Upcoming Long Weekends
+                    - paragraph [ref=e441]: Grab Up to 40% OFF* on Trips.
+                  - generic [ref=e442]: Book Now
+                - generic [ref=e447] [cursor=pointer]:
+                  - generic [ref=e452]:
+                    - paragraph [ref=e454]:
+                      - text: HOLIDAYS
+                      - generic [ref=e455]: T&C's Apply
+                    - paragraph [ref=e456]: "Here Now: Lakshadweep Packages with Direct Flights"
+                    - paragraph [ref=e458]: Book now starting at ₹84,999*.
+                  - generic [ref=e459]: Book Now
+              - generic [ref=e462]:
+                - generic [ref=e465] [cursor=pointer]:
+                  - generic [ref=e469]:
+                    - paragraph [ref=e471]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e472]: T&C's Apply
+                    - paragraph [ref=e473]: "LIVE NOW: Sale by AirAsia"
+                    - paragraph [ref=e475]: with Flights Starting at ₹11,999*.
+                  - generic [ref=e476]: Book Now
+                - generic [ref=e481] [cursor=pointer]:
+                  - generic [ref=e485]:
+                    - paragraph [ref=e487]:
+                      - text: RAILS
+                      - generic [ref=e488]: T&C's Apply
+                    - paragraph [ref=e489]: "For Your Diwali Trip: Cancel Train Ticket at ₹0*."
+                    - paragraph [ref=e491]: Get Free Cancellation on trains at no additional cost.
+                  - generic [ref=e492]: BOOK NOW
+              - generic [ref=e495]:
+                - generic [ref=e498] [cursor=pointer]:
+                  - generic [ref=e502]:
+                    - paragraph [ref=e504]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e505]: T&C's Apply
+                    - paragraph [ref=e506]: "LIVE NOW: Sale by IndiGo"
+                    - paragraph [ref=e508]: with FLAT 6% OFF* on Business Class Fares.
+                  - generic [ref=e509]: Book Now
+                - generic [ref=e514] [cursor=pointer]:
+                  - generic [ref=e518]:
+                    - paragraph [ref=e520]:
+                      - text: DOM HOTELS
+                      - generic [ref=e521]: T&C's Apply
+                    - paragraph [ref=e522]: "FOR INDIA’S FINEST HOTELS:"
+                    - paragraph [ref=e524]: FLAT 15% OFF* on 5-Star Hotels
+                  - generic [ref=e526]:
+                    - generic [ref=e527]: "Code: VISAINFINITE"
+                    - generic [ref=e528]: Book Now
+              - generic [ref=e529]:
+                - generic [ref=e532] [cursor=pointer]:
+                  - generic [ref=e536]:
+                    - paragraph [ref=e538]:
+                      - text: DOM HOTELS
+                      - generic [ref=e539]: T&C's Apply
+                    - paragraph [ref=e540]: "On Your First Villa or Homestay Booking:"
+                    - paragraph [ref=e542]: Enjoy FLAT 20% OFF* and find stays made for your kind of getaways.
+                  - generic [ref=e544]:
+                    - generic [ref=e545]: "Code: FIRSTHOMESTAY"
+                    - generic [ref=e546]: Book Now
+                - generic [ref=e549] [cursor=pointer]:
+                  - generic [ref=e553]:
+                    - paragraph [ref=e555]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e556]: T&C's Apply
+                    - paragraph [ref=e557]: Sale by Japan Airlines
+                    - paragraph [ref=e559]: with Flights to Tokyo Starting at ₹20,000*.
+                  - generic [ref=e560]: Explore Now
+              - generic [ref=e563]:
+                - generic [ref=e566] [cursor=pointer]:
+                  - generic [ref=e570]:
+                    - paragraph [ref=e572]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e573]: T&C's Apply
+                    - paragraph [ref=e574]: Grab Up to 15% OFF*
+                    - paragraph [ref=e576]: on Flights & Hotels
+                  - generic [ref=e577]: View Details
+                - generic [ref=e582] [cursor=pointer]:
+                  - generic [ref=e586]:
+                    - paragraph [ref=e588]:
+                      - text: HOLIDAYS
+                      - generic [ref=e589]: T&C's Apply
+                    - paragraph [ref=e590]: 4N/5D Phu Quoc Group Package with Direct Flights.
+                    - paragraph [ref=e592]: Book starting at ₹99,999*.
+                  - generic [ref=e593]: Book Now
+              - generic [ref=e596]:
+                - generic [ref=e599] [cursor=pointer]:
+                  - generic [ref=e603]:
+                    - paragraph [ref=e605]:
+                      - text: DOM HOTELS
+                      - generic [ref=e606]: T&C's Apply
+                    - paragraph [ref=e607]: YOUR CITY. YOUR IBIS.
+                    - paragraph [ref=e609]: SAVE 10% ON STAYS* across ibis hotels in India
+                  - generic [ref=e610]: Book Now
+                - generic [ref=e615] [cursor=pointer]:
+                  - generic [ref=e619]:
+                    - paragraph [ref=e621]:
+                      - text: CABS
+                      - generic [ref=e622]: T&C's Apply
+                    - paragraph [ref=e623]: Grab Up to ₹500 OFF* on Outstation Cabs.
+                    - paragraph [ref=e625]: Book your journeys to India’s sacred destinations with us.
+                  - generic [ref=e626]: BOOK NOW
+              - generic [ref=e629]:
+                - generic [ref=e632] [cursor=pointer]:
+                  - generic [ref=e636]:
+                    - paragraph [ref=e638]:
+                      - text: ACTIVITIES
+                      - generic [ref=e639]: T&C's Apply
+                    - paragraph [ref=e640]: "AVAILABLE HERE: Tours & Attractions Across India."
+                    - paragraph [ref=e642]: Discover activities, experiences, monuments, amusement parks & more.
+                  - generic [ref=e643]: Book Now
+                - generic [ref=e648] [cursor=pointer]:
+                  - generic [ref=e652]:
+                    - paragraph [ref=e654]:
+                      - text: DOM HOTELS
+                      - generic [ref=e655]: T&C's Apply
+                    - paragraph [ref=e656]: "Live Now: Limited-time Deals"
+                    - paragraph [ref=e658]: for quick weekend getaways.
+                  - generic [ref=e660]:
+                    - generic [ref=e661]: "Code: LASTMINUTE"
+                    - generic [ref=e662]: BOOK NOW
+              - generic [ref=e663]:
+                - generic [ref=e666] [cursor=pointer]:
+                  - generic [ref=e670]:
+                    - paragraph [ref=e672]:
+                      - text: DOM HOTELS
+                      - generic [ref=e673]: T&C's Apply
+                    - paragraph [ref=e674]: Grab Up to 15% OFF*
+                    - paragraph [ref=e676]: on Stays at the Clarks Hotels & Resorts!
+                  - generic [ref=e677]: View Details
+                - generic [ref=e682] [cursor=pointer]:
+                  - generic [ref=e686]:
+                    - paragraph [ref=e688]:
+                      - text: HOLIDAYS
+                      - generic [ref=e689]: T&C's Apply
+                    - paragraph [ref=e690]: "Singapore-special: Get 1 FREE* Activity"
+                    - paragraph [ref=e692]: on booking Disney Cruise Line Packages with us.
+                  - generic [ref=e693]: Book Now
+              - generic [ref=e696]:
+                - generic [ref=e699] [cursor=pointer]:
+                  - generic [ref=e703]:
+                    - paragraph [ref=e705]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e706]: T&C's Apply
+                    - paragraph [ref=e707]: Enjoy an Elevated Business Class Experience
+                    - paragraph [ref=e709]: with Special Benefits & Offers.
+                  - generic [ref=e710]: Explore Now
+                - generic [ref=e715] [cursor=pointer]:
+                  - generic [ref=e719]:
+                    - paragraph [ref=e721]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e722]: T&C's Apply
+                    - paragraph [ref=e723]: Up to 35% OFF* + INTEREST-FREE* EMI
+                    - paragraph [ref=e725]: on flights, hotels & holiday packages.
+                  - generic [ref=e726]: View Details
+              - generic [ref=e729]:
+                - generic [ref=e732] [cursor=pointer]:
+                  - generic [ref=e736]:
+                    - paragraph [ref=e738]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e739]: T&C's Apply
+                    - paragraph [ref=e740]: "Save Big on Your Next Trip:"
+                    - paragraph [ref=e742]: Grab Up to ₹25,000 OFF* on Flights & Hotels.
+                  - generic [ref=e743]: View Details
+                - generic [ref=e748] [cursor=pointer]:
+                  - generic [ref=e752]:
+                    - paragraph [ref=e754]:
+                      - text: DOM HOTELS
+                      - generic [ref=e755]: T&C's Apply
+                    - paragraph [ref=e756]: "SAVE MAX WITH HANDPICKED STAY PARTNERS:"
+                    - paragraph [ref=e758]: EXTRA 10% OFF* & More
+                  - generic [ref=e759]: View Details
+              - generic [ref=e762]:
+                - generic [ref=e765] [cursor=pointer]:
+                  - generic [ref=e769]:
+                    - paragraph [ref=e771]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e772]: T&C's Apply
+                    - paragraph [ref=e773]: Apply for MakeMyTrip ICICI Bank Credit Card Now.
+                    - paragraph [ref=e775]: Enjoy 6%* extra savings, every time you travel.
+                  - generic [ref=e776]: Book Now
+                - generic [ref=e781] [cursor=pointer]:
+                  - generic [ref=e785]:
+                    - paragraph [ref=e787]:
+                      - generic [ref=e788]: T&C's Apply
+                    - paragraph [ref=e789]: Claim Rs. 500 OFF* on MakeMyTrip Airport Cabs!
+                    - paragraph [ref=e791]: Valid on buying a new forex card.
+                  - generic [ref=e792]: Explore Now
+              - generic [ref=e795]:
+                - generic [ref=e798] [cursor=pointer]:
+                  - generic [ref=e802]:
+                    - paragraph [ref=e804]:
+                      - text: CABS
+                      - generic [ref=e805]: T&C's Apply
+                    - paragraph [ref=e806]: Book Hourly Rental Cabs with Us
+                    - paragraph [ref=e808]: and Enjoy No Surge Pricing, Flexibility, Customizable Packages & more.
+                  - generic [ref=e809]: BOOK NOW
+                - generic [ref=e814] [cursor=pointer]:
+                  - generic [ref=e818]:
+                    - paragraph [ref=e820]:
+                      - generic [ref=e821]: T&C's Apply
+                    - paragraph [ref=e822]: Get Up to INR 7500 Cashback* on Forex with Us!
+                    - paragraph [ref=e824]: Also enjoy same-day doorstep delivery.
+                  - generic [ref=e825]: Explore Now
+              - generic [ref=e828]:
+                - generic [ref=e831] [cursor=pointer]:
+                  - generic [ref=e835]:
+                    - paragraph [ref=e837]:
+                      - generic [ref=e838]: T&C's Apply
+                    - paragraph [ref=e839]: "NEW: Zero Markup Single Currency Forex Card!"
+                    - paragraph [ref=e841]: Zero cross-currency fees | FREE ATM withdrawals | Same-day delivery
+                  - generic [ref=e842]: Explore Now
+                - generic [ref=e847] [cursor=pointer]:
+                  - generic [ref=e851]:
+                    - paragraph [ref=e853]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e854]: T&C's Apply
+                    - paragraph [ref=e855]: Up to 15% Instant discount
+                    - paragraph [ref=e857]: on flights & stays for your trips in India & abroad!
+                  - generic [ref=e858]: Book Now
+              - generic [ref=e861]:
+                - generic [ref=e864] [cursor=pointer]:
+                  - generic [ref=e868]:
+                    - paragraph [ref=e870]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e871]: T&C's Apply
+                    - paragraph [ref=e872]: Travel All Around the World with Up to 25% OFF*
+                    - paragraph [ref=e874]: on Flights and Hotels.
+                  - generic [ref=e875]: Book Now
+                - generic [ref=e880] [cursor=pointer]:
+                  - generic [ref=e884]:
+                    - paragraph [ref=e886]:
+                      - generic [ref=e887]: T&C's Apply
+                    - paragraph [ref=e888]: "NEW: Lowest Forex Exchange Rates Guaranteed*."
+                    - paragraph [ref=e890]: We’ll pay you 2X the differential amount if you find a cheaper rate online.
+                  - generic [ref=e891]: Explore Now
+              - generic [ref=e894]:
+                - generic [ref=e897] [cursor=pointer]:
+                  - generic [ref=e901]:
+                    - paragraph [ref=e903]:
+                      - text: BUS
+                      - generic [ref=e904]: T&C's Apply
+                    - paragraph [ref=e905]: FLAT 10% OFF* on Primo Bus Bookings
+                    - paragraph [ref=e907]: "Code: PRIMODAY"
+                  - generic [ref=e908]: BOOK NOW
+                - generic [ref=e913] [cursor=pointer]:
+                  - generic [ref=e917]:
+                    - paragraph [ref=e919]:
+                      - text: BUS
+                      - generic [ref=e920]: T&C's Apply
+                    - paragraph [ref=e921]: "WELCOME OFFER FOR YOUR 1ST BOOKING:"
+                    - paragraph [ref=e923]: Grab FLAT 10% OFF* on road transport corporation bus with us.
+                  - generic [ref=e925]:
+                    - generic [ref=e926]: "Code: RTCNEW"
+                    - generic [ref=e927]: BOOK NOW
+              - generic [ref=e928]:
+                - generic [ref=e931] [cursor=pointer]:
+                  - generic [ref=e935]:
+                    - paragraph [ref=e937]:
+                      - generic [ref=e938]: T&C's Apply
+                    - paragraph [ref=e939]: "AVAIL NOW: Same-Day Doorstep Delivery of Forex!"
+                    - paragraph [ref=e941]: Valid for Multicurrency Forex Card and foreign currency notes.
+                  - generic [ref=e942]: Explore Now
+                - generic [ref=e947] [cursor=pointer]:
+                  - generic [ref=e951]:
+                    - paragraph [ref=e953]:
+                      - text: CABS
+                      - generic [ref=e954]: T&C's Apply
+                    - paragraph [ref=e955]: Explore Top Routes for Outstation Cabs
+                    - paragraph [ref=e957]: Starting @ ₹10/km* & book reliable journeys with us!
+                  - generic [ref=e958]: BOOK NOW
+              - generic [ref=e961]:
+                - generic [ref=e964] [cursor=pointer]:
+                  - generic [ref=e968]:
+                    - paragraph [ref=e970]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e971]: T&C's Apply
+                    - paragraph [ref=e972]: "AVAIL: Up to 30% OFF* + Interest-free EMI on"
+                    - paragraph [ref=e974]: domestic & international flights.
+                  - generic [ref=e975]: Book Now
+                - generic [ref=e980] [cursor=pointer]:
+                  - generic [ref=e984]:
+                    - paragraph [ref=e986]:
+                      - text: CABS
+                      - generic [ref=e987]: T&C's Apply
+                    - paragraph [ref=e988]: Your Outstation Cabs Made More Comfortable
+                    - paragraph [ref=e990]: with New Features!
+                  - generic [ref=e991]: BOOK NOW
+              - generic [ref=e994]:
+                - generic [ref=e997] [cursor=pointer]:
+                  - generic [ref=e1001]:
+                    - paragraph [ref=e1003]:
+                      - text: DOM FLIGHTS
+                      - generic [ref=e1004]: T&C's Apply
+                    - paragraph [ref=e1005]: Meals for Your Flights @ up to 20% Lower Prices!
+                    - paragraph [ref=e1007]: Now book your meal in advance & save BIG bucks on your journey.
+                  - generic [ref=e1008]: Book Now
+                - generic [ref=e1013] [cursor=pointer]:
+                  - generic [ref=e1017]:
+                    - paragraph [ref=e1019]:
+                      - text: ACTIVITIES
+                      - generic [ref=e1020]: T&C's Apply
+                    - paragraph [ref=e1021]: Get up to 20% off* on tours & attractions.
+                    - paragraph [ref=e1023]: "Code: MMTSPECIAL"
+                  - generic [ref=e1024]: Book Now
+              - generic [ref=e1027]:
+                - generic [ref=e1030] [cursor=pointer]:
+                  - generic [ref=e1034]:
+                    - paragraph [ref=e1036]:
+                      - text: BUS
+                      - generic [ref=e1037]: T&C's Apply
+                    - paragraph [ref=e1038]: Grab FLAT 8% OFF* on Buses
+                    - paragraph [ref=e1040]: from Gujarat, Maharashtra & more
+                  - generic [ref=e1042]:
+                    - generic [ref=e1043]: "Code: MMTWEST"
+                    - generic [ref=e1044]: BOOK NOW
+                - generic [ref=e1047] [cursor=pointer]:
+                  - generic [ref=e1051]:
+                    - paragraph [ref=e1053]:
+                      - generic [ref=e1054]: T&C's Apply
+                    - paragraph [ref=e1055]: "NEW: Sell Your Extra Foreign Currency Notes!"
+                    - paragraph [ref=e1057]: Avail best market rates, doorstep pick up & more benefits.
+                  - generic [ref=e1058]: Explore Now
+              - generic [ref=e1061]:
+                - generic [ref=e1064] [cursor=pointer]:
+                  - generic [ref=e1068]:
+                    - paragraph [ref=e1070]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e1071]: T&C's Apply
+                    - paragraph [ref=e1072]: Fly Around the World with FLAT 8% OFF*
+                    - paragraph [ref=e1074]: on Business Class Flight Fares.
+                  - generic [ref=e1075]: Book Now
+                - generic [ref=e1080] [cursor=pointer]:
+                  - generic [ref=e1084]:
+                    - paragraph [ref=e1086]:
+                      - text: CABS
+                      - generic [ref=e1087]: T&C's Apply
+                    - paragraph [ref=e1088]: Up to ₹500 OFF* on Outstation Cabs!
+                    - paragraph [ref=e1090]: Grab this special offer for your next road trip.
+                  - generic [ref=e1091]: BOOK NOW
+              - generic [ref=e1094]:
+                - generic [ref=e1097] [cursor=pointer]:
+                  - generic [ref=e1101]:
+                    - paragraph [ref=e1103]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e1104]: T&C's Apply
+                    - paragraph [ref=e1105]: "Big Savings for You:"
+                    - paragraph [ref=e1107]: Grab Up to ₹7500 OFF* on Flights.
+                  - generic [ref=e1108]: Book Now
+                - generic [ref=e1113] [cursor=pointer]:
+                  - generic [ref=e1117]:
+                    - paragraph [ref=e1119]:
+                      - text: CABS
+                      - generic [ref=e1120]: T&C's Apply
+                    - paragraph [ref=e1121]: Avail our Ride Guarantee feature & get
+                    - paragraph [ref=e1123]: up to ₹5000 refund on missing a flight due to cab delays
+                  - generic [ref=e1124]: BOOK NOW
+              - generic [ref=e1127]:
+                - generic [ref=e1130] [cursor=pointer]:
+                  - generic [ref=e1134]:
+                    - paragraph [ref=e1136]:
+                      - text: CABS
+                      - generic [ref=e1137]: T&C's Apply
+                    - paragraph [ref=e1138]: Book Airport Cabs with Flight Tracking Enabled
+                    - paragraph [ref=e1140]: for automatic rescheduling in case your flight is delayed
+                  - generic [ref=e1141]: BOOK NOW
+                - generic [ref=e1146] [cursor=pointer]:
+                  - generic [ref=e1150]:
+                    - paragraph [ref=e1152]:
+                      - text: CABS
+                      - generic [ref=e1153]: T&C's Apply
+                    - paragraph [ref=e1154]: "For Late Night Flights:"
+                    - paragraph [ref=e1156]: an assured ride & on-time pickup guarantee.
+                  - generic [ref=e1157]: BOOK NOW
+              - generic [ref=e1160]:
+                - generic [ref=e1163] [cursor=pointer]:
+                  - generic [ref=e1167]:
+                    - paragraph [ref=e1169]:
+                      - text: RAILS
+                      - generic [ref=e1170]: T&C's Apply
+                    - paragraph [ref=e1171]: "For You: Up to ₹40 OFF*"
+                    - paragraph [ref=e1173]: on Train Bookings.
+                  - generic [ref=e1174]: BOOK NOW
+                - generic [ref=e1179] [cursor=pointer]:
+                  - generic [ref=e1183]:
+                    - paragraph [ref=e1185]:
+                      - text: BUS
+                      - generic [ref=e1186]: T&C's Apply
+                    - paragraph [ref=e1187]: Grab FLAT 8% OFF* on Buses
+                    - paragraph [ref=e1189]: from Kolkata, Bihar & more
+                  - generic [ref=e1191]:
+                    - generic [ref=e1192]: "Code: MMTEAST"
+                    - generic [ref=e1193]: BOOK NOW
+              - generic [ref=e1194]:
+                - generic [ref=e1197] [cursor=pointer]:
+                  - generic [ref=e1201]:
+                    - paragraph [ref=e1203]:
+                      - text: INTL HOTELS
+                      - generic [ref=e1204]: T&C's Apply
+                    - paragraph [ref=e1205]: Up to 15% OFF*
+                    - paragraph [ref=e1207]: on Hotels, Holidays and Tours & Attractions.
+                  - generic [ref=e1208]: Book Now
+                - generic [ref=e1213] [cursor=pointer]:
+                  - generic [ref=e1217]:
+                    - paragraph [ref=e1219]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e1220]: T&C's Apply
+                    - paragraph [ref=e1221]: Get Live Assistance from Travel Experts
+                    - paragraph [ref=e1223]: for international flight bookings. Call us @ 0124 4781869.
+                  - generic [ref=e1224]: Explore Now
+              - generic [ref=e1227]:
+                - generic [ref=e1230] [cursor=pointer]:
+                  - generic [ref=e1234]:
+                    - paragraph [ref=e1236]:
+                      - text: RAILS
+                      - generic [ref=e1237]: T&C's Apply
+                    - paragraph [ref=e1238]: Special Deal on Trains for MMTBLACK Members.
+                    - paragraph [ref=e1240]: "Up to ₹500 OFF* on Alternate Trip Plan or Free Cancellation. Code: MMTBLACK."
+                  - generic [ref=e1241]: BOOK NOW
+                - generic [ref=e1246] [cursor=pointer]:
+                  - generic [ref=e1250]:
+                    - paragraph [ref=e1252]:
+                      - text: BUS
+                      - generic [ref=e1253]: T&C's Apply
+                    - paragraph [ref=e1254]: FLAT 15% OFF* on FlixBus Bookings
+                    - paragraph [ref=e1256]: "Use code: FLIX15 & Book Your Bus!"
+                  - generic [ref=e1257]: BOOK NOW
+              - generic [ref=e1260]:
+                - generic [ref=e1263] [cursor=pointer]:
+                  - generic [ref=e1267]:
+                    - paragraph [ref=e1269]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e1270]: T&C's Apply
+                    - paragraph [ref=e1271]: "For Worry-free Travel: Grab Up to 30% OFF*"
+                    - paragraph [ref=e1273]: + 3- & 6-months interest-free EMI on flights, stays and holiday packages!
+                  - generic [ref=e1274]: Book Now
+                - generic [ref=e1279] [cursor=pointer]:
+                  - generic [ref=e1283]:
+                    - paragraph [ref=e1285]:
+                      - text: BUS
+                      - generic [ref=e1286]: T&C's Apply
+                    - paragraph [ref=e1287]: Introducing TripAssured on Bus Bookings!
+                    - paragraph [ref=e1289]: Enjoy Guaranteed Departures or Get a 2X Refund.
+                  - generic [ref=e1290]: BOOK NOW
+              - generic [ref=e1293]:
+                - generic [ref=e1296] [cursor=pointer]:
+                  - generic [ref=e1300]:
+                    - paragraph [ref=e1302]:
+                      - text: BUS
+                      - generic [ref=e1303]: T&C's Apply
+                    - paragraph [ref=e1304]: Grab FLAT 8% OFF* on Buses
+                    - paragraph [ref=e1306]: from Delhi, Uttar Pradesh & more
+                  - generic [ref=e1308]:
+                    - generic [ref=e1309]: "Code: MMTNORTH"
+                    - generic [ref=e1310]: BOOK NOW
+                - generic [ref=e1313] [cursor=pointer]:
+                  - generic [ref=e1317]:
+                    - paragraph [ref=e1319]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e1320]: T&C's Apply
+                    - paragraph [ref=e1321]: Get Up to 35% OFF* + Interest-free EMI
+                    - paragraph [ref=e1323]: on flights, stays & holiday packages for your next refreshing break.
+                  - generic [ref=e1324]: Book Now
+              - generic [ref=e1327]:
+                - generic [ref=e1330] [cursor=pointer]:
+                  - generic [ref=e1334]:
+                    - paragraph [ref=e1336]:
+                      - text: BUS
+                      - generic [ref=e1337]: T&C's Apply
+                    - paragraph [ref=e1338]: Grab FLAT 8% OFF* on Buses
+                    - paragraph [ref=e1340]: Karnataka, Andhra Pradesh & more
+                  - generic [ref=e1342]:
+                    - generic [ref=e1343]: "Code: MMTSOUTH"
+                    - generic [ref=e1344]: BOOK NOW
+                - generic [ref=e1347] [cursor=pointer]:
+                  - generic [ref=e1351]:
+                    - paragraph [ref=e1353]:
+                      - text: BUS
+                      - generic [ref=e1354]: T&C's Apply
+                    - paragraph [ref=e1355]: Up to ₹50 OFF*
+                    - paragraph [ref=e1357]: on IntrCity Buses
+                  - generic [ref=e1359]:
+                    - generic [ref=e1360]: "Code: INTRCITY"
+                    - generic [ref=e1361]: Book Now
+              - generic [ref=e1362]:
+                - generic [ref=e1365] [cursor=pointer]:
+                  - generic [ref=e1369]:
+                    - paragraph [ref=e1371]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e1372]: T&C's Apply
+                    - paragraph [ref=e1373]: "Sale by Air Astana: FREE* Baggage Allowance"
+                    - paragraph [ref=e1375]: for Students, on Flights to Bishkek.
+                  - generic [ref=e1376]: Book Now
+                - generic [ref=e1381] [cursor=pointer]:
+                  - generic [ref=e1385]:
+                    - paragraph [ref=e1387]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e1388]: T&C's Apply
+                    - paragraph [ref=e1389]: "Offer by flydubai: Get 40kg Baggage Allowance"
+                    - paragraph [ref=e1391]: on One-way Value Fares to Select* Destinations.
+                  - generic [ref=e1392]: Book Now
+              - generic [ref=e1395]:
+                - generic [ref=e1398] [cursor=pointer]:
+                  - generic [ref=e1402]:
+                    - paragraph [ref=e1404]:
+                      - text: BUS
+                      - generic [ref=e1405]: T&C's Apply
+                    - paragraph [ref=e1406]: "#TicketsToHappiness: Grab Up to 10% OFF* on Bus Bo..."
+                    - paragraph [ref=e1408]: Hop aboard & save BIG.
+                  - generic [ref=e1410]:
+                    - generic [ref=e1411]: "Code: MEGABUS"
+                    - generic [ref=e1412]: BOOK NOW
+                - generic [ref=e1415] [cursor=pointer]:
+                  - generic [ref=e1419]:
+                    - paragraph [ref=e1421]:
+                      - text: RAILS
+                      - generic [ref=e1422]: T&C's Apply
+                    - paragraph [ref=e1423]: Aadhaar-based Authentication on IRCTC’s Platform
+                    - paragraph [ref=e1425]: Now Mandatory for Tatkal Train Bookings.
+                  - generic [ref=e1426]: BOOK NOW
+              - generic [ref=e1429]:
+                - generic [ref=e1432] [cursor=pointer]:
+                  - generic [ref=e1436]:
+                    - paragraph [ref=e1438]:
+                      - text: RAILS
+                      - generic [ref=e1439]: T&C's Apply
+                    - paragraph [ref=e1440]: "INTRODUCING: Seat Availability Forecast"
+                    - paragraph [ref=e1442]: and Sold-out Alerts for train bookings.
+                  - generic [ref=e1443]: BOOK NOW
+                - generic [ref=e1448] [cursor=pointer]:
+                  - generic [ref=e1452]:
+                    - paragraph [ref=e1454]:
+                      - text: DOM FLIGHTS
+                      - generic [ref=e1455]: T&C's Apply
+                    - paragraph [ref=e1456]: "WITH VISA SIGNATURE CREDIT CARDS:"
+                    - paragraph [ref=e1458]: Enjoy Exclusive Benefits on domestic flights.
+                  - generic [ref=e1460]:
+                    - generic [ref=e1461]: "Code: VISASIGNATURE"
+                    - generic [ref=e1462]: View Details
+              - generic [ref=e1463]:
+                - generic [ref=e1466] [cursor=pointer]:
+                  - generic [ref=e1470]:
+                    - paragraph [ref=e1472]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e1473]: T&C's Apply
+                    - paragraph [ref=e1474]: "Live Now: Special Fares by Cathay Pacific"
+                    - paragraph [ref=e1476]: with Up to 8% OFF* on All Flights.
+                  - generic [ref=e1477]: Book Now
+                - generic [ref=e1482] [cursor=pointer]:
+                  - generic [ref=e1486]:
+                    - paragraph [ref=e1488]: INTL FLIGHTS
+                    - paragraph [ref=e1489]: "LIVE NOW: Sale by Riyadh Air"
+                    - paragraph [ref=e1491]: with Up to 25% OFF* on Fares.
+                  - generic [ref=e1492]: Explore Now
+              - generic [ref=e1495]:
+                - generic [ref=e1498] [cursor=pointer]:
+                  - generic [ref=e1502]:
+                    - paragraph [ref=e1504]: INTL FLIGHTS
+                    - paragraph [ref=e1505]: "Now Flying: New Flights by Air India Express"
+                    - paragraph [ref=e1507]: Connecting Chennai & Singapore.
+                  - generic [ref=e1508]: Explore Now
+                - generic [ref=e1513] [cursor=pointer]:
+                  - generic [ref=e1517]:
+                    - paragraph [ref=e1519]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e1520]: T&C's Apply
+                    - paragraph [ref=e1521]: New Flights by Air Arabia Connecting Sharjah
+                    - paragraph [ref=e1523]: to Select* Destinations in Europe.
+                  - generic [ref=e1524]: BOOK NOW
+              - generic [ref=e1527]:
+                - generic [ref=e1530] [cursor=pointer]:
+                  - generic [ref=e1534]:
+                    - paragraph [ref=e1536]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e1537]: T&C's Apply
+                    - paragraph [ref=e1538]: Book Singapore Airlines Flights
+                    - paragraph [ref=e1540]: Connecting India to Select* Destinations in Australia.
+                  - generic [ref=e1541]: Book Now
+                - generic [ref=e1546] [cursor=pointer]:
+                  - generic [ref=e1550]:
+                    - paragraph [ref=e1552]:
+                      - text: DOM FLIGHTS
+                      - generic [ref=e1553]: T&C's Apply
+                    - paragraph [ref=e1554]: Sale by FLY91 with FLAT ₹1,000 OFF*
+                    - paragraph [ref=e1556]: on Round-trip Flights to Tirupati.
+                  - generic [ref=e1557]: Explore Now
+              - generic [ref=e1560]:
+                - generic [ref=e1563] [cursor=pointer]:
+                  - generic [ref=e1567]:
+                    - paragraph [ref=e1569]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e1570]: T&C's Apply
+                    - paragraph [ref=e1571]: "NOW FLYING: New Flights by Singapore Airlines"
+                    - paragraph [ref=e1573]: to Western Sydney International Airport (WSI).
+                  - generic [ref=e1574]: Book Now
+                - generic [ref=e1579] [cursor=pointer]:
+                  - generic [ref=e1583]:
+                    - paragraph [ref=e1585]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e1586]: T&C's Apply
+                    - paragraph [ref=e1587]: Sale by Malaysia Airlines with Up to 35% OFF*
+                    - paragraph [ref=e1589]: on Flights from Select* Destinations in India.
+                  - generic [ref=e1590]: Explore Now
+              - generic [ref=e1593]:
+                - generic [ref=e1596] [cursor=pointer]:
+                  - generic [ref=e1600]:
+                    - paragraph [ref=e1602]:
+                      - text: BUS
+                      - generic [ref=e1603]: T&C's Apply
+                    - paragraph [ref=e1604]: "MMTBLACK SPECIAL: FLAT ₹150 OFF*"
+                    - paragraph [ref=e1606]: on Bus Tickets.
+                  - generic [ref=e1608]:
+                    - generic [ref=e1609]: "Code: MMTBLACK"
+                    - generic [ref=e1610]: BOOK NOW
+                - generic [ref=e1613] [cursor=pointer]:
+                  - generic [ref=e1617]:
+                    - paragraph [ref=e1619]:
+                      - text: INTL HOTELS
+                      - generic [ref=e1620]: T&C's Apply
+                    - paragraph [ref=e1621]: Grab Upto 15% OFF* on 3, 4 & 5-Star StaysUp to 15%...
+                    - paragraph [ref=e1623]: with ICICI Bank Credit Cards and Credit Card EMI.
+                  - generic [ref=e1625]:
+                    - generic [ref=e1626]: "Code: ICICILUXURYINT"
+                    - generic [ref=e1627]: View Details
+              - generic [ref=e1628]:
+                - generic [ref=e1631] [cursor=pointer]:
+                  - generic [ref=e1635]:
+                    - paragraph [ref=e1637]:
+                      - text: DOM HOTELS
+                      - generic [ref=e1638]: T&C's Apply
+                    - paragraph [ref=e1639]: Grab Up to 15% Instant Discount* on Stays
+                    - paragraph [ref=e1641]: with ICICI Bank Credit Cards and Credit Card EMI.
+                  - generic [ref=e1643]:
+                    - generic [ref=e1644]: "Code: ICICILUXURY"
+                    - generic [ref=e1645]: View Details
+                - generic [ref=e1648] [cursor=pointer]:
+                  - generic [ref=e1652]:
+                    - paragraph [ref=e1654]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e1655]: T&C's Apply
+                    - paragraph [ref=e1656]: Up to ₹10000 instant discount
+                    - paragraph [ref=e1658]: on International Flights!
+                  - generic [ref=e1659]:
+                    - generic [ref=e1660]: Offer starts on 21 Sep 2026
+                    - generic [ref=e1661]: View Details
+              - generic [ref=e1663]:
+                - generic [ref=e1666] [cursor=pointer]:
+                  - generic [ref=e1670]:
+                    - paragraph [ref=e1672]:
+                      - text: DOM FLIGHTS
+                      - generic [ref=e1673]: T&C's Apply
+                    - paragraph [ref=e1674]: "For You: Group Booking Benefits on Flights"
+                    - paragraph [ref=e1676]: in India! Book 9+ flight tickets together & save more.
+                  - generic [ref=e1677]: Book Now
+                - generic [ref=e1682] [cursor=pointer]:
+                  - generic [ref=e1686]:
+                    - paragraph [ref=e1688]:
+                      - text: HOLIDAYS
+                      - generic [ref=e1689]: T&C's Apply
+                    - paragraph [ref=e1690]: Connect with Your Spiritual Roots.
+                    - paragraph [ref=e1692]: Explore MyPilgrimage Packages & embark on India’s sacred journeys.
+                  - generic [ref=e1693]: Book Now
+              - generic [ref=e1696]:
+                - generic [ref=e1699] [cursor=pointer]:
+                  - generic [ref=e1703]:
+                    - paragraph [ref=e1705]:
+                      - text: DOM HOTELS
+                      - generic [ref=e1706]: T&C's Apply
+                    - paragraph [ref=e1707]: "EPIC SAVINGS ON YOUR TRIPS:"
+                    - paragraph [ref=e1709]: Up to 35% OFF* + Extra Savings on EMI
+                  - generic [ref=e1710]: View Details
+                - generic [ref=e1715] [cursor=pointer]:
+                  - generic [ref=e1719]:
+                    - paragraph [ref=e1721]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e1722]: T&C's Apply
+                    - paragraph [ref=e1723]: Grab Up to 35% OFF* on
+                    - paragraph [ref=e1725]: domestic + international flights, hotels & holiday packages for a memorable trip!
+                  - generic [ref=e1726]: View Details
+              - generic [ref=e1729]:
+                - generic [ref=e1732] [cursor=pointer]:
+                  - generic [ref=e1736]:
+                    - paragraph [ref=e1738]:
+                      - text: BUS
+                      - generic [ref=e1739]: T&C's Apply
+                    - paragraph [ref=e1740]: Save up to ₹250*
+                    - paragraph [ref=e1742]: with our Bus-Train Pass.
+                  - generic [ref=e1743]: BOOK NOW
+                - generic [ref=e1748] [cursor=pointer]:
+                  - generic [ref=e1752]:
+                    - paragraph [ref=e1754]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e1755]: T&C's Apply
+                    - paragraph [ref=e1756]: Grab up to 15% OFF*
+                    - paragraph [ref=e1758]: on flights, hotels, homestays & bus.
+                  - generic [ref=e1759]: View Details
+              - generic [ref=e1762]:
+                - generic [ref=e1765] [cursor=pointer]:
+                  - generic [ref=e1769]:
+                    - paragraph [ref=e1771]:
+                      - text: INTL FLIGHTS
+                      - generic [ref=e1772]: T&C's Apply
+                    - paragraph [ref=e1773]: Grab up to 15% OFF*
+                    - paragraph [ref=e1775]: on domestic & international flights + hotels, outstation cabs & buses.
+                  - generic [ref=e1776]:
+                    - generic [ref=e1777]: Offer starts in 01d:06h:14m
+                    - generic [ref=e1778]: View Details
+                - generic [ref=e1782] [cursor=pointer]:
+                  - generic [ref=e1786]:
+                    - paragraph [ref=e1788]:
+                      - text: DOM FLIGHTS
+                      - generic [ref=e1789]: T&C's Apply
+                    - paragraph [ref=e1790]: Up to 15% OFF* on flights & hotels
+                    - paragraph [ref=e1792]: Valid on IndusInd MasterCard Debit Card
+                  - generic [ref=e1793]: View Details
+            - button "Next" [ref=e1796] [cursor=pointer]
+        - main [ref=e1798]:
+          - generic [ref=e1800]:
+            - generic [ref=e1802]:
+              - paragraph [ref=e1803]
+              - paragraph [ref=e1804]
+            - generic [ref=e1805] [cursor=pointer]
+        - generic [ref=e1808]:
+          - button "Previous" [ref=e1809] [cursor=pointer]
+          - generic [ref=e1811]:
+            - paragraph [ref=e1817] [cursor=pointer]: "Explore Villas & Homestays Made for Your Kind of Getaways! Book Your FIRST Stay @ FLAT 20% OFF*. Use Code: FIRSTHOMESTAY"
+            - paragraph [ref=e1823] [cursor=pointer]: Introducing OneCircle. Reward Your Stays Across 11,000+ Properties in 1000+ Cities worldwide. 10% Reward Points on Member Stays.
+            - paragraph [ref=e1829] [cursor=pointer]: Flexible Check-in/ Check-out. Early Check-in & Late Check-out on Stays. No waiting. No stressing. Just a smooth travel experience.
+          - button "Next" [ref=e1834] [cursor=pointer]
+        - main [ref=e1836]
+        - main [ref=e1841]:
+          - link [ref=e1847] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e1848]:
+              - paragraph
+            - generic [ref=e1849]:
+              - paragraph
+            - generic [ref=e1850]:
+              - paragraph
+            - generic [ref=e1851]:
+              - paragraph
+            - generic [ref=e1852]:
+              - paragraph
+            - generic [ref=e1853]:
+              - paragraph
+        - main [ref=e1855]:
+          - link [ref=e1861] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e1862]:
+              - paragraph
+            - generic [ref=e1863]:
+              - paragraph
+            - generic [ref=e1864]:
+              - paragraph
+            - generic [ref=e1865]:
+              - paragraph
+            - generic [ref=e1866]:
+              - paragraph
+            - generic [ref=e1867]:
+              - paragraph
+  - contentinfo [ref=e1868]:
+    - generic [ref=e1870]:
+      - paragraph [ref=e1871]: MakeMyTrip
+      - list [ref=e1872]:
+        - listitem [ref=e1873]:
+          - link "About Us" [ref=e1874] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/about-us/company_profile.php
+          - text: ","
+        - listitem [ref=e1875]:
+          - link "Investor Relations" [ref=e1876] [cursor=pointer]:
+            - /url: https://investors.makemytrip.com
+          - text: ","
+        - listitem [ref=e1877]:
+          - link "Careers" [ref=e1878] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/about-us/jobs.php
+          - text: ","
+        - listitem [ref=e1879]:
+          - link "Sustainability" [ref=e1880] [cursor=pointer]:
+            - /url: https://sustainability.makemytrip.com
+          - text: ","
+        - listitem [ref=e1881]:
+          - link "MMT Foundation" [ref=e1882] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/csr/mmt_foundation.html
+          - text: ","
+        - listitem [ref=e1883]:
+          - link "Legal Notices" [ref=e1884] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/legal/notice_privacy_policy.html
+          - text: ","
+        - listitem [ref=e1885]:
+          - link "CSR Policy & Committee" [ref=e1886] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/csr/csr_policy.html
+          - text: ","
+        - listitem [ref=e1887]:
+          - link "myBiz for Corporate Travel" [ref=e1888] [cursor=pointer]:
+            - /url: https://mybiz.makemytrip.com
+          - text: ","
+        - listitem [ref=e1889]:
+          - link "myPartner - Travel Agent Portal" [ref=e1890] [cursor=pointer]:
+            - /url: https://mypartner.makemytrip.com
+          - text: ","
+        - listitem [ref=e1891]:
+          - link "List your hotel" [ref=e1892] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/hotelier-register.htm
+          - text: ","
+        - listitem [ref=e1893]:
+          - link "Partners- Redbus" [ref=e1894] [cursor=pointer]:
+            - /url: https://www.redbus.in/
+          - text: ","
+        - listitem [ref=e1895]:
+          - link "Partners- Goibibo" [ref=e1896] [cursor=pointer]:
+            - /url: https://www.goibibo.com/
+          - text: ","
+        - listitem [ref=e1897]:
+          - link "Advertise with Us" [ref=e1898] [cursor=pointer]:
+            - /url: https://advertising.makemytrip.com/ad/solutions/
+          - text: ","
+        - listitem [ref=e1899]:
+          - link "Holiday-Franchise" [ref=e1900] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/franchise
+          - text: ","
+        - listitem [ref=e1901]:
+          - link "Partners- BookMyForex" [ref=e1902] [cursor=pointer]:
+            - /url: https://www.bookmyforex.com/
+          - text: ","
+        - listitem [ref=e1903]:
+          - link "RedBus Ferry Malaysia" [ref=e1904] [cursor=pointer]:
+            - /url: https://www.redbus.my/ferry
+          - text: ","
+        - listitem [ref=e1905]:
+          - link "RedBus Ferry Singapore" [ref=e1906] [cursor=pointer]:
+            - /url: https://www.redbus.sg/ferry
+          - text: ","
+        - listitem [ref=e1907]:
+          - link "redBus Vietnam" [ref=e1908] [cursor=pointer]:
+            - /url: https://www.redbus.vn/
+          - text: ","
+        - listitem [ref=e1909]:
+          - link "redBus Cambodia" [ref=e1910] [cursor=pointer]:
+            - /url: https://www.redbus.com.kh/
+          - text: ","
+        - listitem [ref=e1911]:
+          - link "redBus Columbia" [ref=e1912] [cursor=pointer]:
+            - /url: https://www.redbus.co/
+          - text: ","
+        - listitem [ref=e1913]:
+          - link "redBus Peru" [ref=e1914] [cursor=pointer]:
+            - /url: https://www.redbus.pe/
+          - text: ","
+        - listitem [ref=e1915]:
+          - link "redBus Indonesia" [ref=e1916] [cursor=pointer]:
+            - /url: https://www.redbus.id/
+          - text: ","
+        - listitem [ref=e1917]:
+          - link "Things to Do in Malaysia" [ref=e1918] [cursor=pointer]:
+            - /url: https://www.redbus.my/things-to-do/
+          - text: ","
+        - listitem [ref=e1919]:
+          - link "Things to Do in Singapore" [ref=e1920] [cursor=pointer]:
+            - /url: https://www.redbus.sg/things-to-do/
+      - paragraph [ref=e1921]: Quick Links
+      - list [ref=e1922]:
+        - listitem [ref=e1923]:
+          - link "Delhi Chennai Flights" [ref=e1924] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/new_delhi-chennai-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e1925]:
+          - link "Delhi Mumbai Flights" [ref=e1926] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/new_delhi-mumbai-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e1927]:
+          - link "Delhi Goa Flights" [ref=e1928] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/new_delhi-goa-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e1929]:
+          - link "Chennai Mumbai flights" [ref=e1930] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/chennai-mumbai-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e1931]:
+          - link "Mumbai Hyderabad flights" [ref=e1932] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/mumbai-hyderabad-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e1933]:
+          - link "Kolkata to Rupsi Flights" [ref=e1934] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/kolkata-rupsi-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e1935]:
+          - link "Rupsi to Guwahati Flights" [ref=e1936] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/rupsi-guwahati-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e1937]:
+          - link "Pasighat to Guwahati Flights" [ref=e1938] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/pasighat-guwahati-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e1939]:
+          - link "Delhi to Khajuraho Flights" [ref=e1940] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/new_delhi-khajuraho-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e1941]:
+          - link "Cochin to Agatti Island Flights" [ref=e1942] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/kochi-agatti_island-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e1943]:
+          - link "Hotels in Delhi" [ref=e1944] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/delhi-hotels.html
+          - text: ","
+        - listitem [ref=e1945]:
+          - link "Hotels in Mumbai" [ref=e1946] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/mumbai-hotels.html
+          - text: ","
+        - listitem [ref=e1947]:
+          - link "Hotels In Goa" [ref=e1948] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/goa-hotels.html
+          - text: ","
+        - listitem [ref=e1949]:
+          - link "Hotels In Jaipur" [ref=e1950] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/jaipur-hotels.html
+          - text: ","
+        - listitem [ref=e1951]:
+          - link "Hotels In Ooty" [ref=e1952] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/ooty-hotels.html
+          - text: ","
+        - listitem [ref=e1953]:
+          - link "Hotels In Udaipur" [ref=e1954] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/udaipur-hotels.html
+          - text: ","
+        - listitem [ref=e1955]:
+          - link "Hotels in Puri" [ref=e1956] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/puri-hotels.html
+          - text: ","
+        - listitem [ref=e1957]:
+          - link "Hotels In North Goa" [ref=e1958] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/hotels-in-north_goa-goa.html
+          - text: ","
+        - listitem [ref=e1959]:
+          - link "Hotels In Rishikesh" [ref=e1960] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/rishikesh-hotels.html
+          - text: ","
+        - listitem [ref=e1961]:
+          - link "Honeymoon Packages" [ref=e1962] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/holidays-india/honeymoon-packages.html
+          - text: ","
+        - listitem [ref=e1963]:
+          - link "Kerala Packages" [ref=e1964] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/holidays-india/kerala-travel-packages.html
+          - text: ","
+        - listitem [ref=e1965]:
+          - link "Kashmir Packages" [ref=e1966] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/holidays-india/kashmir-travel-packages.html
+          - text: ","
+        - listitem [ref=e1967]:
+          - link "Ladakh Packages" [ref=e1968] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/holidays-india/ladakh-travel-packages.html
+          - text: ","
+        - listitem [ref=e1969]:
+          - link "Goa Packages" [ref=e1970] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/holidays-india/goa-travel-packages.html
+          - text: ","
+        - listitem [ref=e1971]:
+          - link "Thailand Packages" [ref=e1972] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/holidays-international/thailand-vacation-tour-packages.html
+          - text: ","
+        - listitem [ref=e1973]:
+          - link "Sri Lanka Visa" [ref=e1974] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/sri_lanka-visa.html
+          - text: ","
+        - listitem [ref=e1975]:
+          - link "Thailand Visa" [ref=e1976] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/thailand-visa.html
+          - text: ","
+        - listitem [ref=e1977]:
+          - link "Explore Goa" [ref=e1978] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/tripideas/places/Goa
+          - text: ","
+        - listitem [ref=e1979]:
+          - link "Explore Manali" [ref=e1980] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/tripideas/places/Manali
+          - text: ","
+        - listitem [ref=e1981]:
+          - link "Explore Shimla" [ref=e1982] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/tripideas/places/Shimla
+          - text: ","
+        - listitem [ref=e1983]:
+          - link "Explore Jaipur" [ref=e1984] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/tripideas/places/Jaipur
+          - text: ","
+        - listitem [ref=e1985]:
+          - link "Explore Srinagar" [ref=e1986] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/tripideas/places/Srinagar
+      - paragraph [ref=e1987]: About the Site
+      - list [ref=e1988]:
+        - listitem [ref=e1989]:
+          - link "Customer Support" [ref=e1990] [cursor=pointer]:
+            - /url: https://supportz.makemytrip.com/Mima/CustomerHelpAndSupport/
+          - text: ","
+        - listitem [ref=e1991]:
+          - link "Payment Security" [ref=e1992] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/legal/payment_security.html
+          - text: ","
+        - listitem [ref=e1993]:
+          - link "Privacy Policy" [ref=e1994] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/legal/in/eng/privacy_policy.html
+          - text: ","
+        - listitem [ref=e1995]:
+          - link "Cookie Policy" [ref=e1996] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/legal/in/eng/cookie_disclosure_policy.html
+          - text: ","
+        - listitem [ref=e1997]:
+          - link "User Agreement" [ref=e1998] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/legal/in/eng/user_agreement.html
+          - text: ","
+        - listitem [ref=e1999]:
+          - link "Terms of Service" [ref=e2000] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/legal/in/eng/user_agreement.html#tos
+          - text: ","
+        - listitem [ref=e2001]:
+          - link "Franchise Offices" [ref=e2002] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/franchise/branchoffices
+          - text: ","
+        - listitem [ref=e2003]:
+          - link "Make A Payment" [ref=e2004] [cursor=pointer]:
+            - /url: https://payments.makemytrip.com/easypay/
+          - text: ","
+        - listitem [ref=e2005]:
+          - link "Work From Home" [ref=e2006] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/about-us/work-from-home.php
+          - text: ","
+        - listitem [ref=e2007]:
+          - link "Escalation Channel" [ref=e2008] [cursor=pointer]:
+            - /url: https://supportz.makemytrip.com/Mima/Escalate/
+          - text: ","
+        - listitem [ref=e2009]:
+          - link "Report Security Issues" [ref=e2010] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/pwa/hlp/v3/bugbounty/
+      - paragraph [ref=e2011]: Popular Routes
+      - list [ref=e2012]:
+        - listitem [ref=e2013]:
+          - link "Delhi to Goa flight" [ref=e2014] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/new_delhi-goa-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2015]:
+          - link "Delhi to Mumbai flight" [ref=e2016] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/new_delhi-mumbai-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2017]:
+          - link "Mumbai to Delhi flight" [ref=e2018] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/mumbai-new_delhi-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2019]:
+          - link "Delhi to Patna flight" [ref=e2020] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/new_delhi-patna-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2021]:
+          - link "Mumbai to Goa flight" [ref=e2022] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/mumbai-goa-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2023]:
+          - link "Bangalore to Delhi flight" [ref=e2024] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/bangalore-new_delhi-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2025]:
+          - link "Delhi to Bangalore flight" [ref=e2026] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/new_delhi-bangalore-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2027]:
+          - link "Pune to Delhi flight" [ref=e2028] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/pune-new_delhi-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2029]:
+          - link "Patna to Delhi flight" [ref=e2030] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/patna-new_delhi-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2031]:
+          - link "Delhi to Kolkata flight" [ref=e2032] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/new_delhi-kolkata-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2033]:
+          - link "Kolkata to Delhi flight" [ref=e2034] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/kolkata-new_delhi-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2035]:
+          - link "Bangalore to Goa flight" [ref=e2036] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/bangalore-goa-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2037]:
+          - link "Hyderabad to Delhi flight" [ref=e2038] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/hyderabad-new_delhi-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2039]:
+          - link "Mumbai to Kolkata flight" [ref=e2040] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/mumbai-kolkata-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2041]:
+          - link "Delhi to Pune flight" [ref=e2042] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/new_delhi-pune-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2043]:
+          - link "Delhi to Srinagar flight" [ref=e2044] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/new_delhi-srinagar-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2045]:
+          - link "Mumbai to Bangalore flight" [ref=e2046] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/mumbai-bangalore-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2047]:
+          - link "Ahmedabad to Goa flight" [ref=e2048] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/ahmedabad-goa-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2049]:
+          - link "Bangalore to Mumbai flight" [ref=e2050] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/bangalore-mumbai-cheap-airtickets.html
+      - paragraph [ref=e2051]: Important Links
+      - list [ref=e2052]:
+        - listitem [ref=e2053]:
+          - link "Cheap Flights" [ref=e2054] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/cheap.html
+          - text: ","
+        - listitem [ref=e2055]:
+          - link "Flight Status" [ref=e2056] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/flight-status.htm
+          - text: ","
+        - listitem [ref=e2057]:
+          - link "Kumbh Mela" [ref=e2058] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/railways/kumbh-mela-special-trains.html
+          - text: ","
+        - listitem [ref=e2059]:
+          - link "Domestic Airlines" [ref=e2060] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/airlines.html
+          - text: ","
+        - listitem [ref=e2061]:
+          - link "International Airlines" [ref=e2062] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/airlines.html
+          - text: ","
+        - listitem [ref=e2063]:
+          - link "Indigo" [ref=e2064] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/indigo-airlines.html
+          - text: ","
+        - listitem [ref=e2065]:
+          - link "Spicejet" [ref=e2066] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/spicejet.html
+          - text: ","
+        - listitem [ref=e2067]:
+          - link "Air Asia" [ref=e2068] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/air-asia.html
+          - text: ","
+        - listitem [ref=e2069]:
+          - link "Air India" [ref=e2070] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/airline-air_india.html
+          - text: ","
+        - listitem [ref=e2071]:
+          - link "Indian Railways" [ref=e2072] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/railways/indian-railways.html
+          - text: ","
+        - listitem [ref=e2073]:
+          - link "Trip Ideas" [ref=e2074] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/tripideas
+          - text: ","
+        - listitem [ref=e2075]:
+          - link "Beaches" [ref=e2076] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/tripideas/beach-destinations
+          - text: ","
+        - listitem [ref=e2077]:
+          - link "Honeymoon Destinations" [ref=e2078] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/tripideas/honeymoon-destinations
+          - text: ","
+        - listitem [ref=e2079]:
+          - link "Romantic Destinations" [ref=e2080] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/tripideas/romantic-destinations
+          - text: ","
+        - listitem [ref=e2081]:
+          - link "Popular Destinations" [ref=e2082] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/tripideas/places
+          - text: ","
+        - listitem [ref=e2083]:
+          - link "Resorts In Udaipur" [ref=e2084] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/p-resorts-in-udaipur.html
+          - text: ","
+        - listitem [ref=e2085]:
+          - link "Resorts In Munnar" [ref=e2086] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/p-resorts-in-munnar.html
+          - text: ","
+        - listitem [ref=e2087]:
+          - link "Villas In Lonavala" [ref=e2088] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/p-villas-in-lonavala.html
+          - text: ","
+        - listitem [ref=e2089]:
+          - link "Hotels in Thailand" [ref=e2090] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/hotels-in-thailand.html
+          - text: ","
+        - listitem [ref=e2091]:
+          - link "Villas In Goa" [ref=e2092] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/p-villas-in-goa.html
+          - text: ","
+        - listitem [ref=e2093]:
+          - link "Domestic Flight Offers" [ref=e2094] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/domestic-flight-offer.html
+          - text: ","
+        - listitem [ref=e2095]:
+          - link "International Flight Offers" [ref=e2096] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/international-flight-offer.html
+          - text: ","
+        - listitem [ref=e2097]:
+          - link "UAE Flight Offers" [ref=e2098] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/united_arab_emirates/flight-offers.html
+          - text: ","
+        - listitem [ref=e2099]:
+          - link "USA" [ref=e2100] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/en-us/
+          - text: ","
+        - listitem [ref=e2101]:
+          - link "UAE" [ref=e2102] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/en-ae/
+          - text: ","
+        - listitem [ref=e2103]:
+          - link "Saudi Arabia" [ref=e2104] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/en-sa/
+          - text: ","
+        - listitem [ref=e2105]:
+          - link "UK" [ref=e2106] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/en-gb/
+          - text: ","
+        - listitem [ref=e2107]:
+          - link "Oman" [ref=e2108] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/en-om/
+      - paragraph [ref=e2109]: Corporate Travel
+      - list [ref=e2110]:
+        - listitem [ref=e2111]:
+          - link "Business Travel" [ref=e2112] [cursor=pointer]:
+            - /url: https://mybiz.makemytrip.com/corporate/business-travel.html
+          - text: ","
+        - listitem [ref=e2113]:
+          - link "Corporate Travel" [ref=e2114] [cursor=pointer]:
+            - /url: https://mybiz.makemytrip.com/corporate/corporate-travel-basics.html
+          - text: ","
+        - listitem [ref=e2115]:
+          - link "Corporate Travel Management" [ref=e2116] [cursor=pointer]:
+            - /url: https://mybiz.makemytrip.com/corporate/corporate-travel-management.html
+          - text: ","
+        - listitem [ref=e2117]:
+          - link "Corporate Travel Solution" [ref=e2118] [cursor=pointer]:
+            - /url: https://mybiz.makemytrip.com/corporate/business-travel-solutions.html
+          - text: ","
+        - listitem [ref=e2119]:
+          - link "Corporate Hotel Booking" [ref=e2120] [cursor=pointer]:
+            - /url: https://mybiz.makemytrip.com/corporate/corporate-hotel-booking.html
+          - text: ","
+        - listitem [ref=e2121]:
+          - link "Corporate Flight Booking" [ref=e2122] [cursor=pointer]:
+            - /url: https://mybiz.makemytrip.com/corporate/corporate-flight-booking.html
+          - text: ","
+        - listitem [ref=e2123]:
+          - link "Expense Management" [ref=e2124] [cursor=pointer]:
+            - /url: https://mybiz.makemytrip.com/corporate-expense-management
+          - text: ","
+        - listitem [ref=e2125]:
+          - link "Corporate Expense Management" [ref=e2126] [cursor=pointer]:
+            - /url: https://mybiz.makemytrip.com/corporate/expense-management.html
+          - text: ","
+        - listitem [ref=e2127]:
+          - link "GST on Hotel Rooms" [ref=e2128] [cursor=pointer]:
+            - /url: https://mybiz.makemytrip.com/corporate/hotels-gst-invoice.html
+          - text: ","
+        - listitem [ref=e2129]:
+          - link "GST on Flight Tickets" [ref=e2130] [cursor=pointer]:
+            - /url: https://mybiz.makemytrip.com/corporate/gst-invoice-flights.html
+          - text: ","
+        - listitem [ref=e2131]:
+          - link "Business Travel for SME" [ref=e2132] [cursor=pointer]:
+            - /url: https://mybiz.makemytrip.com/corporate/business-travel-with-udyam-ngo.html
+          - text: ","
+        - listitem [ref=e2133]:
+          - link "GST Invoice for International flights" [ref=e2134] [cursor=pointer]:
+            - /url: https://mybiz.makemytrip.com/corporate/gst-invoice-international-flights.html
+          - text: ","
+        - listitem [ref=e2135]:
+          - link "GST Invoice for Bus" [ref=e2136] [cursor=pointer]:
+            - /url: https://mybiz.makemytrip.com/corporate/gst-for-bus-travel.html
+          - text: ","
+        - listitem [ref=e2137]:
+          - link "GST on Train Tickets" [ref=e2138] [cursor=pointer]:
+            - /url: https://mybiz.makemytrip.com/corporate/gst-on-train-tickets.html
+          - text: ","
+        - listitem [ref=e2139]:
+          - link "T&E (Travel & Expense)" [ref=e2140] [cursor=pointer]:
+            - /url: https://mybiz.makemytrip.com/corporate/t-and-e-meaning.html
+          - text: ","
+        - listitem [ref=e2141]:
+          - link "myBiz - Best Business Travel Platform" [ref=e2142] [cursor=pointer]:
+            - /url: https://mybiz.makemytrip.com/corporate/best-business-travel-platform.html
+          - text: ","
+        - listitem [ref=e2143]:
+          - link "GST Invoice for Corporate Travel" [ref=e2144] [cursor=pointer]:
+            - /url: https://mybiz.makemytrip.com/corporate/gst-bill.html
+          - text: ","
+        - listitem [ref=e2145]:
+          - link "myBiz for Small Business" [ref=e2146] [cursor=pointer]:
+            - /url: https://mybiz.makemytrip.com/corporate/travel-for-small-business.html
+          - text: ","
+        - listitem [ref=e2147]:
+          - link "Free cancellation on International Flights" [ref=e2148] [cursor=pointer]:
+            - /url: https://mybiz.makemytrip.com/corporate/corporate-flights-free-cancellation-international.html
+      - paragraph [ref=e2149]: Product Offering
+      - list [ref=e2150]:
+        - listitem [ref=e2151]:
+          - link "Flights" [ref=e2152] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/
+          - text: ","
+        - listitem [ref=e2153]:
+          - link "International Flights" [ref=e2154] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/
+          - text: ","
+        - listitem [ref=e2155]:
+          - link "Charter Flights" [ref=e2156] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/charter-flights/
+          - text: ","
+        - listitem [ref=e2157]:
+          - link "Hotels" [ref=e2158] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/
+          - text: ","
+        - listitem [ref=e2159]:
+          - link "International Hotels" [ref=e2160] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/
+          - text: ","
+        - listitem [ref=e2161]:
+          - link "Apply Visa Online" [ref=e2162] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com
+          - text: ","
+        - listitem [ref=e2163]:
+          - link "Homestays and Villas" [ref=e2164] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/homestays/
+          - text: ","
+        - listitem [ref=e2165]:
+          - link "Activities" [ref=e2166] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/activities/
+          - text: ","
+        - listitem [ref=e2167]:
+          - link "Holidays In India" [ref=e2168] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/holidays-india
+          - text: ","
+        - listitem [ref=e2169]:
+          - link "International Holidays" [ref=e2170] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/holidays-international
+          - text: ","
+        - listitem [ref=e2171]:
+          - link "Book Hotels From UAE" [ref=e2172] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/?ccde=ae
+          - text: ","
+        - listitem [ref=e2173]:
+          - link "Book Online Cabs" [ref=e2174] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/cabs
+          - text: ","
+        - listitem [ref=e2175]:
+          - link "Book Bus Tickets" [ref=e2176] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/bus-tickets/
+          - text: ","
+        - listitem [ref=e2177]:
+          - link "Book Train Tickets" [ref=e2178] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/railways/
+          - text: ","
+        - listitem [ref=e2179]:
+          - link "Cheap Tickets to India" [ref=e2180] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/?ccde=us
+          - text: ","
+        - listitem [ref=e2181]:
+          - link "Book Flights From US" [ref=e2182] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/?ccde=us
+          - text: ","
+        - listitem [ref=e2183]:
+          - link "Book Flights From UAE" [ref=e2184] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/?ccde=us
+          - text: ","
+        - listitem [ref=e2185]:
+          - link "Trip Planner" [ref=e2186] [cursor=pointer]:
+            - /url: https://planner.makemytrip.com/?&intid=Homepage_Tab_Inspirock
+          - text: ","
+        - listitem [ref=e2187]:
+          - link "Forex Card" [ref=e2188] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/forex/
+          - text: ","
+        - listitem [ref=e2189]:
+          - link "Buy Foreign Currency" [ref=e2190] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/tripmoney/currency
+          - text: ","
+        - listitem [ref=e2191]:
+          - link "Travel Insurance" [ref=e2192] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/travel-insurance/
+          - text: ","
+        - listitem [ref=e2193]:
+          - link "Travel Insurance Thailand" [ref=e2194] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/travel-insurance/thailand/
+          - text: ","
+        - listitem [ref=e2195]:
+          - link "Travel Insurance For UAE" [ref=e2196] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/travel-insurance/dubai/
+          - text: ","
+        - listitem [ref=e2197]:
+          - link "Travel Insurance For Indonesia" [ref=e2198] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/travel-insurance/indonesia/
+          - text: ","
+        - listitem [ref=e2199]:
+          - link "Travel Insurance For Vietnam" [ref=e2200] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/travel-insurance/vietnam/
+          - text: ","
+        - listitem [ref=e2201]:
+          - link "Travel Insurance For Europe" [ref=e2202] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/travel-insurance/europe/
+          - text: ","
+        - listitem [ref=e2203]:
+          - link "Travel Insurance For USA" [ref=e2204] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/travel-insurance/usa/
+          - text: ","
+        - listitem [ref=e2205]:
+          - link "Travel Insurance for Singapore" [ref=e2206] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/travel-insurance/singapore/
+          - text: ","
+        - listitem [ref=e2207]:
+          - link "Travel Insurance for Malaysia" [ref=e2208] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/travel-insurance/malaysia/
+          - text: ","
+        - listitem [ref=e2209]:
+          - link "Travel Insurance for Sri Lanka" [ref=e2210] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/travel-insurance/sri-lanka/
+          - text: ","
+        - listitem [ref=e2211]:
+          - link "Travel Insurance for United Kingdom" [ref=e2212] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/travel-insurance/uk/
+          - text: ","
+        - listitem [ref=e2213]:
+          - link "Travel Insurance for Canada" [ref=e2214] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/travel-insurance/canada/
+          - text: ","
+        - listitem [ref=e2215]:
+          - link "Gift Cards" [ref=e2216] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/gift-cards/
+          - text: ","
+        - listitem [ref=e2217]:
+          - link "Gift" [ref=e2218] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/gift-cards/gift/
+          - text: ","
+        - listitem [ref=e2219]:
+          - link "Wedding Gift" [ref=e2220] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/gift-cards/wedding-gift/
+          - text: ","
+        - listitem [ref=e2221]:
+          - link "Anniversary Gift" [ref=e2222] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/gift-cards/anniversary-gift/
+          - text: ","
+        - listitem [ref=e2223]:
+          - link "Birthday Gift" [ref=e2224] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/gift-cards/birthday-gift/
+          - text: ","
+        - listitem [ref=e2225]:
+          - link "Diwali Gift" [ref=e2226] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/gift-cards/diwali-gift/
+          - text: ","
+        - listitem [ref=e2227]:
+          - link "Valentines Gift" [ref=e2228] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/gift-cards/valentines-gift/
+          - text: ","
+        - listitem [ref=e2229]:
+          - link "Farewell Gift" [ref=e2230] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/gift-cards/farewell-gift/
+          - text: ","
+        - listitem [ref=e2231]:
+          - link "Christmas Gift" [ref=e2232] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/gift-cards/christmas-gift/
+          - text: ","
+        - listitem [ref=e2233]:
+          - link "New Year Gift" [ref=e2234] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/gift-cards/newyear-gift/
+          - text: ","
+        - listitem [ref=e2235]:
+          - link "Trip Ideas" [ref=e2236] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/tripideas/
+          - text: ","
+        - listitem [ref=e2237]:
+          - link "Travel Blog" [ref=e2238] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/blog/?intid=mmtblog_footer
+          - text: ","
+        - listitem [ref=e2239]:
+          - link "PNR Status" [ref=e2240] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/railways/PNR/
+          - text: ","
+        - listitem [ref=e2241]:
+          - link "MakeMyTrip Advertising Solutions" [ref=e2242] [cursor=pointer]:
+            - /url: https://advertising.makemytrip.com/ad/solutions/
+          - text: ","
+        - listitem [ref=e2243]:
+          - link "One Way Cab" [ref=e2244] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/car-rental/one-way-cab.html
+          - text: ","
+        - listitem [ref=e2245]:
+          - link "Travel Credit Card" [ref=e2246] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/cards/makemytrip-icici-bank-credit-card
+      - paragraph [ref=e2247]: Top Hotels in India
+      - list [ref=e2248]:
+        - listitem [ref=e2249]:
+          - link "Fairmont Jaipur" [ref=e2250] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/fairmont_jaipur-details-jaipur.html
+          - text: ","
+        - listitem [ref=e2251]:
+          - link "St Regis Goa" [ref=e2252] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/the_st_regis_goa_resort-details-goa.html
+          - text: ","
+        - listitem [ref=e2253]:
+          - link "Six Senses Fort Barwara" [ref=e2254] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/the_st_regis_goa_resort-details-goa.html
+          - text: ","
+        - listitem [ref=e2255]:
+          - link "W Goa" [ref=e2256] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/w_goa-details-goa.html
+          - text: ","
+        - listitem [ref=e2257]:
+          - link "Grand Hyatt Goa" [ref=e2258] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/grand_hyatt_goa-details-goa.html
+          - text: ","
+        - listitem [ref=e2259]:
+          - link "Shangri-La Bangalore" [ref=e2260] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/shangri_la_bengaluru-details-bangalore.html
+          - text: ","
+        - listitem [ref=e2261]:
+          - link "The St Regis Mumbai" [ref=e2262] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/the_st_regis_mumbai-details-mumbai.html
+          - text: ","
+        - listitem [ref=e2263]:
+          - link "Taj Rishikesh" [ref=e2264] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/taj_rishikesh_resort_spa_uttarakhand-details-rishikesh.html
+          - text: ","
+        - listitem [ref=e2265]:
+          - link "Grand Hyatt Mumbai" [ref=e2266] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/grand_hyatt_mumbai-details-mumbai.html
+          - text: ","
+        - listitem [ref=e2267]:
+          - link "Le Meridien Delhi" [ref=e2268] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/le_meridien_delhi-details-delhi.html
+          - text: ","
+        - listitem [ref=e2269]:
+          - link "Rambagh Palace Jaipur" [ref=e2270] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/rambagh_palace_jaipur-details-jaipur.html
+          - text: ","
+        - listitem [ref=e2271]:
+          - link "Leela Palace Chennai" [ref=e2272] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/the_leela_palace_chennai-details-chennai.html
+          - text: ","
+        - listitem [ref=e2273]:
+          - link "The Leela Palace Udaipur" [ref=e2274] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/the_leela_palace_udaipur-details-udaipur.html
+          - text: ","
+        - listitem [ref=e2275]:
+          - link "Taj Lake Palace Udaipur" [ref=e2276] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/taj_lake_palace_udaipur-details-udaipur.html
+          - text: ","
+        - listitem [ref=e2277]:
+          - link "Jw Marriott Chandigarh" [ref=e2278] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/taj_lake_palace_udaipur-details-udaipur.html
+          - text: ","
+        - listitem [ref=e2279]:
+          - link "Alila Diwa Goa" [ref=e2280] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/alila_diwa_goa_a_hyatt_brand-details-goa.html
+          - text: ","
+        - listitem [ref=e2281]:
+          - link "Le Meridien Goa" [ref=e2282] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/le_meridien_goa_calangute-details-goa.html
+          - text: ","
+        - listitem [ref=e2283]:
+          - link "Taj Lands End Mumbai" [ref=e2284] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/taj_lands_end_mumbai-details-mumbai.html
+          - text: ","
+        - listitem [ref=e2285]:
+          - link "Itc Grand Chola Chennai" [ref=e2286] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/itc_grand_chola_a_luxury_collection_hotel-details-chennai.html
+          - text: ","
+        - listitem [ref=e2287]:
+          - link "Itc Maratha Mumbai" [ref=e2288] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/itc_maratha_a_luxury_collection_hotel-details-mumbai.html
+          - text: ","
+        - listitem [ref=e2289]:
+          - link "Oberoi Udaivilas" [ref=e2290] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/the_oberoi_udaivilas-details-udaipur.html
+          - text: ","
+        - listitem [ref=e2291]:
+          - link "Jai Mahal Palace Jaipur" [ref=e2292] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/jai_mahal_palace-details-jaipur.html
+          - text: ","
+        - listitem [ref=e2293]:
+          - link "Taj Mahal Tower Mumbai" [ref=e2294] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/taj_mahal_tower_mumbai-details-mumbai.html
+          - text: ","
+        - listitem [ref=e2295]:
+          - link "Marriott Suites Pune" [ref=e2296] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/marriott_suites_pune-details-pune.html
+          - text: ","
+        - listitem [ref=e2297]:
+          - link "Park Hyatt Chennai" [ref=e2298] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/park_hyatt_chennai-details-chennai.html
+          - text: ","
+        - listitem [ref=e2299]:
+          - link "The Leela Palace Jaipur" [ref=e2300] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/the_leela_palace_jaipur-details-jaipur.html
+          - text: ","
+        - listitem [ref=e2301]:
+          - link "Jw Marriott Mumbai Sahar" [ref=e2302] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/jw_marriott_mumbai_sahar-details-mumbai.html
+          - text: ","
+        - listitem [ref=e2303]:
+          - link "Jw Marriott Mumbai Juhu" [ref=e2304] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/jw_marriott_mumbai_juhu-details-mumbai.html
+          - text: ","
+        - listitem [ref=e2305]:
+          - link "The Ritz Carlton Bengaluru" [ref=e2306] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/the_ritz_carlton-details-bangalore.html
+          - text: ","
+        - listitem [ref=e2307]:
+          - link "The Oberoi New Delhi" [ref=e2308] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/the_oberoi_new_delhi-details-delhi.html
+          - text: ","
+        - listitem [ref=e2309]:
+          - link "Taj Resort & Convention Centre Goa" [ref=e2310] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/taj_resort_and_convention_center_goa-details-goa.html
+          - text: ","
+        - listitem [ref=e2311]:
+          - link "Taj Bengal Kolkata" [ref=e2312] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/taj_bengal_kolkata-details-kolkata.html
+          - text: ","
+        - listitem [ref=e2313]:
+          - link "Taj Coromandel Chennai" [ref=e2314] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/taj_coromandel_chennai-details-chennai.html
+          - text: ","
+        - listitem [ref=e2315]:
+          - link "The Oberoi Gurgaon" [ref=e2316] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/the_oberoi_gurgaon-details-gurgaon.html
+          - text: ","
+        - listitem [ref=e2317]:
+          - link "The Westin Goa" [ref=e2318] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/the_westin_goa-details-goa.html
+          - text: ","
+        - listitem [ref=e2319]:
+          - link "Jw Marriott Hotel Pune" [ref=e2320] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/jw_marriott_hotel_pune-details-pune.html
+          - text: ","
+        - listitem [ref=e2321]:
+          - link "The Leela Palace New Delhi" [ref=e2322] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/the_leela_palace_new_delhi-details-delhi.html
+          - text: ","
+        - listitem [ref=e2323]:
+          - link "Taj West End Bengaluru" [ref=e2324] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/taj_west_end_bengaluru-details-bangalore.html
+          - text: ","
+        - listitem [ref=e2325]:
+          - link "The Taj Mahal Palace Mumbai" [ref=e2326] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/the_taj_mahal_palace_mumbai-details-mumbai.html
+          - text: ","
+        - listitem [ref=e2327]:
+          - link "Best Hotels in India" [ref=e2328] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/best-hotels-india.htm
+      - paragraph [ref=e2329]: International Routes
+      - list [ref=e2330]:
+        - listitem [ref=e2331]:
+          - link "Delhi to Dubai flight" [ref=e2332] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/delhi-dubai-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2333]:
+          - link "Mumbai to Dubai Flight" [ref=e2334] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/mumbai-dubai-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2335]:
+          - link "Ahmedabad to London flight" [ref=e2336] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/ahmedabad-london-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2337]:
+          - link "Delhi to Bali flight" [ref=e2338] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/delhi-denpasar_bali-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2339]:
+          - link "Delhi to London flight" [ref=e2340] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/delhi-london-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2341]:
+          - link "Delhi to Bangkok flight" [ref=e2342] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/delhi-bangkok-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2343]:
+          - link "Delhi to kathmandu flight" [ref=e2344] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/delhi-kathmandu-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2345]:
+          - link "Delhi to Singapore flight" [ref=e2346] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/delhi-singapore-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2347]:
+          - link "Mumbai to London flight" [ref=e2348] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/mumbai-london-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2349]:
+          - link "Mumbai to Bali flight" [ref=e2350] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/mumbai-denpasar_bali-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2351]:
+          - link "Mumbai to Bangkok flight" [ref=e2352] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/mumbai-bangkok-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2353]:
+          - link "Ahmedabad to Dubai Flight" [ref=e2354] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/ahmedabad-dubai-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2355]:
+          - link "Bangalore to Dubai flight" [ref=e2356] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/bangalore-dubai-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2357]:
+          - link "Chennai to Dubai flight" [ref=e2358] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/chennai-dubai-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2359]:
+          - link "Delhi to Phuket flight" [ref=e2360] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/delhi-phuket-cheap-airtickets.html
+      - paragraph [ref=e2361]: Popular Domestic routes
+      - list [ref=e2362]:
+        - listitem [ref=e2363]:
+          - link "Delhi to Chennai flight" [ref=e2364] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/new_delhi-chennai-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2365]:
+          - link "Kolkata to Bangalore flight" [ref=e2366] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/kolkata-bangalore-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2367]:
+          - link "Delhi to Hyderabad flight" [ref=e2368] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/new_delhi-hyderabad-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2369]:
+          - link "Delhi to Ahmedabad flight" [ref=e2370] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/new_delhi-ahmedabad-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2371]:
+          - link "Kolkata to Bagdogra flight" [ref=e2372] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/kolkata-bagdogra-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2373]:
+          - link "Srinagar to Delhi flight" [ref=e2374] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/srinagar-new_delhi-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2375]:
+          - link "Hyderabad to Goa flight" [ref=e2376] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/hyderabad-goa-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2377]:
+          - link "Mumbai to Chennai flight" [ref=e2378] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/mumbai-chennai-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2379]:
+          - link "Ahmedabad to Mumbai flight" [ref=e2380] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/ahmedabad-mumbai-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2381]:
+          - link "Delhi to Bagdogra flight" [ref=e2382] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/new_delhi-bagdogra-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2383]:
+          - link "Goa to Delhi flight" [ref=e2384] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/goa-new_delhi-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2385]:
+          - link "Goa to Mumbai flight" [ref=e2386] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/goa-mumbai-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2387]:
+          - link "Hyderabad to Bangalore flight" [ref=e2388] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/hyderabad-bangalore-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2389]:
+          - link "Mumbai to Hyderabad flight" [ref=e2390] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/mumbai-hyderabad-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2391]:
+          - link "Delhi to Leh flight" [ref=e2392] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/new_delhi-leh-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2393]:
+          - link "Pune to Bangalore flight" [ref=e2394] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/pune-bangalore-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2395]:
+          - link "Kolkata to Goa flight" [ref=e2396] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/kolkata-goa-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2397]:
+          - link "Bangalore to Pune flight" [ref=e2398] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/bangalore-pune-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2399]:
+          - link "Hyderabad to Mumbai flight" [ref=e2400] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/hyderabad-mumbai-cheap-airtickets.html
+      - paragraph [ref=e2401]: Top International hotels
+      - list [ref=e2402]:
+        - listitem [ref=e2403]:
+          - link "Adaaran Club Rannalhi" [ref=e2404] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/maldives/maldives-hotels/adaaran_club_rannalhi-details.html
+          - text: ","
+        - listitem [ref=e2405]:
+          - link "Marina Bay Sands Singapore" [ref=e2406] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/en-sg/singapore/singapore-hotels/marina_bay_sands_201804021311192994-details.html
+          - text: ","
+        - listitem [ref=e2407]:
+          - link "Coco Bodu Hithi" [ref=e2408] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/maldives/maldives-hotels/coco_bodu_hithi-details.html
+          - text: ","
+        - listitem [ref=e2409]:
+          - link "Taj Dubai" [ref=e2410] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/united_arab_emirates/dubai-hotels/taj_dubai-details.html
+          - text: ","
+        - listitem [ref=e2411]:
+          - link "Atlantis Hotel Dubai" [ref=e2412] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/united_arab_emirates/dubai-hotels/atlantis_the_palm-details.html
+          - text: ","
+        - listitem [ref=e2413]:
+          - link "Amari Phuket" [ref=e2414] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/thailand/phuket-hotels/amari_phuket-details.html
+          - text: ","
+        - listitem [ref=e2415]:
+          - link "Jw Marriott Dubai" [ref=e2416] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/united_arab_emirates/dubai-hotels/jw_marriott_marquis_hotel_dubai-details.html
+          - text: ","
+        - listitem [ref=e2417]:
+          - link "Armani Hotel Dubai" [ref=e2418] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/united_arab_emirates/dubai-hotels/armani_hotel_dubai_in_burj_khalifa_201705301151145388-details.html
+          - text: ","
+        - listitem [ref=e2419]:
+          - link "Grand Hyatt Dubai" [ref=e2420] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/united_arab_emirates/dubai-hotels/grand_hyatt_dubai_hotel-details.html
+          - text: ","
+        - listitem [ref=e2421]:
+          - link "Saii Lagoon Maldives" [ref=e2422] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/maldives/maldives-hotels/saii_lagoon_maldives_curio_collection_by_hilton-details.html
+          - text: ","
+        - listitem [ref=e2423]:
+          - link "Gevora Hotel Dubai" [ref=e2424] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/united_arab_emirates/dubai-hotels/gevora_hotel_201807291406286306-details.html
+          - text: ","
+        - listitem [ref=e2425]:
+          - link "Hyatt Regency Dubai" [ref=e2426] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/united_arab_emirates/dubai-hotels/hyatt_regency_dubai-details.html
+          - text: ","
+        - listitem [ref=e2427]:
+          - link "Pan Pacific Singapore" [ref=e2428] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/singapore/singapore-hotels/pan_pacific_singapore-details.html
+          - text: ","
+        - listitem [ref=e2429]:
+          - link "The Palm Dubai" [ref=e2430] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/united_arab_emirates/dubai-hotels/atlantis_the_palm-details.html
+          - text: ","
+        - listitem [ref=e2431]:
+          - link "Caesars Palace" [ref=e2432] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/united_states/las_vegas-hotels/caesars_palace-details.html
+          - text: ","
+        - listitem [ref=e2433]:
+          - link "Baiyoke Sky Hotel" [ref=e2434] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/thailand/bangkok-hotels/baiyoke_sky_hotel-details.html
+          - text: ","
+        - listitem [ref=e2435]:
+          - link "Centara Pattaya Hotel" [ref=e2436] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/thailand/pattaya-hotels/centara_pattaya_hotel-details.html
+          - text: ","
+        - listitem [ref=e2437]:
+          - link "Embudu Village" [ref=e2438] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/maldives/maldives-hotels/embudu_village-details.html
+          - text: ","
+        - listitem [ref=e2439]:
+          - link "Orchard Hotel Singapore" [ref=e2440] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/singapore/singapore-hotels/orchard_hotel_singapore-details.html
+          - text: ","
+        - listitem [ref=e2441]:
+          - link "Reethi Beach Resort" [ref=e2442] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/maldives/maldives-hotels/reethi_beach_resort-details.html
+          - text: ","
+        - listitem [ref=e2443]:
+          - link "Ambassador Hotel Bangkok" [ref=e2444] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/thailand/bangkok-hotels/ambassador_hotel_bangkok-details.html
+          - text: ","
+        - listitem [ref=e2445]:
+          - link "Dusit Thani Pattaya" [ref=e2446] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/thailand/pattaya-hotels/dusit_thani_pattaya-details.html
+          - text: ","
+        - listitem [ref=e2447]:
+          - link "Shangri La Singapore" [ref=e2448] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/singapore/singapore-hotels/shangri_la_hotel_singapore-details.html
+          - text: ","
+        - listitem [ref=e2449]:
+          - link "Sunbeam Hotel Pattaya" [ref=e2450] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/thailand/pattaya-hotels/sunbeam_hotel_pattaya-details.html
+          - text: ","
+        - listitem [ref=e2451]:
+          - link "Taj Samudra Colombo" [ref=e2452] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/sri_lanka/colombo-hotels/taj_samudra_colombo-details.html
+          - text: ","
+        - listitem [ref=e2453]:
+          - link "Bangkok Palace Hotel" [ref=e2454] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/thailand/bangkok-hotels/bangkok_palace_hotel-details.html
+          - text: ","
+        - listitem [ref=e2455]:
+          - link "Hilton Pattaya" [ref=e2456] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/thailand/pattaya-hotels/hilton_pattaya-details.html
+          - text: ","
+        - listitem [ref=e2457]:
+          - link "Novotel Phuket Resort" [ref=e2458] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/thailand/phuket-hotels/novotel_phuket_resort_4190725563794486-details.html
+          - text: ","
+        - listitem [ref=e2459]:
+          - link "Taj Exotica Resort Maldives" [ref=e2460] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/maldives/maldives-hotels/taj_exotica_resort_and_spa_maldives_free_airport_transfers-details.html
+          - text: ","
+        - listitem [ref=e2461]:
+          - link "Village Hotel Bugis" [ref=e2462] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/singapore/singapore-hotels/village_hotel_bugis_by_far_east_hospitality_201901241343198130-details.html
+          - text: ","
+        - listitem [ref=e2463]:
+          - link "Avani Atrium Bangkok" [ref=e2464] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/thailand/bangkok-hotels/grand_mercure_bangkok_atrium_4190725563790494-details.html
+          - text: ","
+        - listitem [ref=e2465]:
+          - link "The Plaza New York" [ref=e2466] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/united_states/new_york-hotels/the_plaza_hotel-details.html
+          - text: ","
+        - listitem [ref=e2467]:
+          - link "Village Hotel Albert Court" [ref=e2468] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/singapore/singapore-hotels/village_hotel_albert_court_by_far_east_hospitality_201901241343458174-details.html
+          - text: ","
+        - listitem [ref=e2469]:
+          - link "Amari Pattaya" [ref=e2470] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels-international/thailand/pattaya-hotels/amari_pattaya_by_amari_group-details.html
+      - paragraph [ref=e2471]: Visa Offerings
+      - list [ref=e2472]:
+        - listitem [ref=e2473]:
+          - link "Australia Visa" [ref=e2474] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/australia-visa.html
+          - text: ","
+        - listitem [ref=e2475]:
+          - link "Austria Visa" [ref=e2476] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/austria-visa.html
+          - text: ","
+        - listitem [ref=e2477]:
+          - link "Azerbaijan Visa" [ref=e2478] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/azerbaijan-visa.html
+          - text: ","
+        - listitem [ref=e2479]:
+          - link "Bangladesh Visa" [ref=e2480] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/bangladesh-visa.html
+          - text: ","
+        - listitem [ref=e2481]:
+          - link "Bahrain Visa" [ref=e2482] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/bahrain-visa.html
+          - text: ","
+        - listitem [ref=e2483]:
+          - link "Cambodia Visa" [ref=e2484] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/cambodia-visa.html
+          - text: ","
+        - listitem [ref=e2485]:
+          - link "China Visa" [ref=e2486] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/china-visa.html
+          - text: ","
+        - listitem [ref=e2487]:
+          - link "Czech Republic Visa" [ref=e2488] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/czech-republic-visa.html
+          - text: ","
+        - listitem [ref=e2489]:
+          - link "Dubai - UAE Visa" [ref=e2490] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/dubai-visa.html
+          - text: ","
+        - listitem [ref=e2491]:
+          - link "Egypt Visa" [ref=e2492] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/egypt-visa.html
+          - text: ","
+        - listitem [ref=e2493]:
+          - link "Finland Visa" [ref=e2494] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/finland-visa.html
+          - text: ","
+        - listitem [ref=e2495]:
+          - link "France Visa" [ref=e2496] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/france-visa.html
+          - text: ","
+        - listitem [ref=e2497]:
+          - link "Georgia Visa" [ref=e2498] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/georgia-visa.html
+          - text: ","
+        - listitem [ref=e2499]:
+          - link "Germany Visa" [ref=e2500] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/germany-visa.html
+          - text: ","
+        - listitem [ref=e2501]:
+          - link "Greece Visa" [ref=e2502] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/greece-visa.html
+          - text: ","
+        - listitem [ref=e2503]:
+          - link "Hong Kong Visa" [ref=e2504] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/hong-kong-visa.html
+          - text: ","
+        - listitem [ref=e2505]:
+          - link "Iceland Visa" [ref=e2506] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/iceland-visa.html
+          - text: ","
+        - listitem [ref=e2507]:
+          - link "Indonesia Visa" [ref=e2508] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/indonesia-visa.html
+          - text: ","
+        - listitem [ref=e2509]:
+          - link "Ireland Visa" [ref=e2510] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/ireland-visa.html
+          - text: ","
+        - listitem [ref=e2511]:
+          - link "Italy Visa" [ref=e2512] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/italy-visa.html
+          - text: ","
+        - listitem [ref=e2513]:
+          - link "Japan Visa" [ref=e2514] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/japan-visa.html
+          - text: ","
+        - listitem [ref=e2515]:
+          - link "Kenya Visa" [ref=e2516] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/kenya-visa.html
+          - text: ","
+        - listitem [ref=e2517]:
+          - link "Malaysia Visa" [ref=e2518] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/malaysia-visa.html
+          - text: ","
+        - listitem [ref=e2519]:
+          - link "Morocco Visa" [ref=e2520] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/morocco-visa.html
+          - text: ","
+        - listitem [ref=e2521]:
+          - link "Netherlands Visa" [ref=e2522] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/netherlands-visa.html
+          - text: ","
+        - listitem [ref=e2523]:
+          - link "New Zealand Visa" [ref=e2524] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/new-zealand-visa.html
+          - text: ","
+        - listitem [ref=e2525]:
+          - link "Norway Visa" [ref=e2526] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/norway-visa.html
+          - text: ","
+        - listitem [ref=e2527]:
+          - link "Portugal Visa" [ref=e2528] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/portugal-visa.html
+          - text: ","
+        - listitem [ref=e2529]:
+          - link "Qatar Visa" [ref=e2530] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/qatar-visa.html
+          - text: ","
+        - listitem [ref=e2531]:
+          - link "Russia Visa" [ref=e2532] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/russia-visa.html
+          - text: ","
+        - listitem [ref=e2533]:
+          - link "Singapore Visa" [ref=e2534] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/singapore-visa.html
+          - text: ","
+        - listitem [ref=e2535]:
+          - link "South Africa Visa" [ref=e2536] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/south-africa-visa.html
+          - text: ","
+        - listitem [ref=e2537]:
+          - link "South Korea Visa" [ref=e2538] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/south-korea-visa.html
+          - text: ","
+        - listitem [ref=e2539]:
+          - link "Spain Visa" [ref=e2540] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/spain-visa.html
+          - text: ","
+        - listitem [ref=e2541]:
+          - link "Sri Lanka Visa" [ref=e2542] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/sri-lanka-visa.html
+          - text: ","
+        - listitem [ref=e2543]:
+          - link "Sweden Visa" [ref=e2544] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/sweden-visa.html
+          - text: ","
+        - listitem [ref=e2545]:
+          - link "Switzerland Visa" [ref=e2546] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/switzerland-visa.html
+          - text: ","
+        - listitem [ref=e2547]:
+          - link "Thailand Visa" [ref=e2548] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/thailand-visa.html
+          - text: ","
+        - listitem [ref=e2549]:
+          - link "United Kingdom - UK Visa" [ref=e2550] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/uk-visa.html
+          - text: ","
+        - listitem [ref=e2551]:
+          - link "Uzbekistan Visa" [ref=e2552] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/uzbekistan-visa.html
+          - text: ","
+        - listitem [ref=e2553]:
+          - link "Vietnam Visa" [ref=e2554] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/vietnam-visa.html
+          - text: ","
+        - listitem [ref=e2555]:
+          - link "Mongolia Visa" [ref=e2556] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/mongolia-visa.html
+          - text: ","
+        - listitem [ref=e2557]:
+          - link "Zambia Visa" [ref=e2558] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/zambia-visa.html
+      - paragraph [ref=e2559]: Popular International Routes
+      - list [ref=e2560]:
+        - listitem [ref=e2561]:
+          - link "Hyderabad to Dubai flight" [ref=e2562] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/hyderabad-dubai-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2563]:
+          - link "Chennai to Singapore flight" [ref=e2564] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/chennai-singapore-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2565]:
+          - link "Mumbai to Singapore flight" [ref=e2566] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/mumbai-singapore-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2567]:
+          - link "Delhi to Toronto flight" [ref=e2568] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/delhi-toronto-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2569]:
+          - link "Bangalore to Bangkok flight" [ref=e2570] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/bangalore-bangkok-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2571]:
+          - link "Delhi to New York flight" [ref=e2572] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/delhi-new_york-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2573]:
+          - link "Bangalore to Bali flight" [ref=e2574] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/bangalore-denpasar_bali-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2575]:
+          - link "Bangalore to Singapore flight" [ref=e2576] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/bangalore-singapore-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2577]:
+          - link "Delhi to Hong Kong flight" [ref=e2578] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/delhi-hong_kong-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2579]:
+          - link "Delhi to Maldives flight" [ref=e2580] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/delhi-male-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2581]:
+          - link "Delhi to Paris flight" [ref=e2582] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/delhi-paris-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2583]:
+          - link "Dubai to Delhi Flight" [ref=e2584] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/dubai-delhi-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2585]:
+          - link "Kochi to Dubai Flight" [ref=e2586] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/kochi-dubai-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2587]:
+          - link "Delhi to Tokyo flight" [ref=e2588] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/delhi-tokyo-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2589]:
+          - link "Dubai to Mumbai Flight" [ref=e2590] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/dubai-mumbai-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2591]:
+          - link "Mumbai to New York flight" [ref=e2592] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/mumbai-new_york-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2593]:
+          - link "Amritsar to Dubai Flight" [ref=e2594] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/amritsar-dubai-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2595]:
+          - link "Chennai to Colombo flight" [ref=e2596] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/chennai-colombo-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2597]:
+          - link "Mumbai to Tokyo flight" [ref=e2598] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/mumbai-tokyo-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2599]:
+          - link "Delhi to Colombo flight" [ref=e2600] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/delhi-colombo-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2601]:
+          - link "Mumbai to Colombo flight" [ref=e2602] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/mumbai-colombo-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2603]:
+          - link "Delhi to Seoul flight" [ref=e2604] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/international-flights/delhi-seoul-cheap-airtickets.html
+          - text: ","
+        - listitem [ref=e2605]:
+          - link "Flight Status" [ref=e2606] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/flight-status.htm
+      - paragraph [ref=e2607]: Book Hotels in India from Top Destinations
+      - list [ref=e2608]:
+        - listitem [ref=e2609]:
+          - link "Hotels in Jaipur" [ref=e2610] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/jaipur-hotels.html
+          - text: ","
+        - listitem [ref=e2611]:
+          - link "Hotels in Goa" [ref=e2612] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/goa-hotels.html
+          - text: ","
+        - listitem [ref=e2613]:
+          - link "Hotels in Delhi" [ref=e2614] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/delhi-hotels.html
+          - text: ","
+        - listitem [ref=e2615]:
+          - link "Hotels in Udaipur" [ref=e2616] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/udaipur-hotels.html
+          - text: ","
+        - listitem [ref=e2617]:
+          - link "Hotels in Gurgaon" [ref=e2618] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/gurgaon-hotels.html
+          - text: ","
+        - listitem [ref=e2619]:
+          - link "Hotels in Mumbai" [ref=e2620] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/mumbai-hotels.html
+          - text: ","
+        - listitem [ref=e2621]:
+          - link "Hotels in Bangalore" [ref=e2622] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/bangalore-hotels.html
+          - text: ","
+        - listitem [ref=e2623]:
+          - link "Hotels in Rishikesh" [ref=e2624] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/rishikesh-hotels.html
+          - text: ","
+        - listitem [ref=e2625]:
+          - link "Hotels in Agra" [ref=e2626] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/agra-hotels.html
+          - text: ","
+        - listitem [ref=e2627]:
+          - link "Hotels in Chennai" [ref=e2628] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/chennai-hotels.html
+          - text: ","
+        - listitem [ref=e2629]:
+          - link "Hotels in Kasauli" [ref=e2630] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/kasauli-hotels.html
+          - text: ","
+        - listitem [ref=e2631]:
+          - link "Hotels in Kolkata" [ref=e2632] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/kolkata-hotels.html
+          - text: ","
+        - listitem [ref=e2633]:
+          - link "Hotels in Pune" [ref=e2634] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/pune-hotels.html
+          - text: ","
+        - listitem [ref=e2635]:
+          - link "Hotels in Manali" [ref=e2636] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/manali-hotels.html
+          - text: ","
+        - listitem [ref=e2637]:
+          - link "Hotels in Lonavala" [ref=e2638] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/lonavala-hotels.html
+          - text: ","
+        - listitem [ref=e2639]:
+          - link "Hotels in Shimla" [ref=e2640] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/shimla-hotels.html
+          - text: ","
+        - listitem [ref=e2641]:
+          - link "Hotels in Munnar" [ref=e2642] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/munnar-hotels.html
+          - text: ","
+        - listitem [ref=e2643]:
+          - link "Hotels in Ayodhya" [ref=e2644] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/ayodhya-hotels.html
+          - text: ","
+        - listitem [ref=e2645]:
+          - link "Hotels in Gulmarg" [ref=e2646] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/gulmarg-hotels.html
+          - text: ","
+        - listitem [ref=e2647]:
+          - link "Hotels in Leh" [ref=e2648] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/leh-hotels.html
+          - text: ","
+        - listitem [ref=e2649]:
+          - link "Hotels in Hyderabad" [ref=e2650] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/hyderabad-hotels.html
+    - article [ref=e2654]:
+      - generic [ref=e2655]:
+        - heading "Why MakeMyTrip?" [level=2] [ref=e2656]
+        - generic [ref=e2657]: Established in 2000, MakeMyTrip has since positioned itself as one of the leading companies, providing great offers, competitive airfares, exclusive discounts, and a seamless online booking experience to many of its customers. The experience of booking your flight tickets, hotel stay, and holiday package through our desktop site or mobile app can be done with complete ease and no hassles at all. We also deliver amazing offers, such as Instant Discounts, Fare Calendar, MyRewardsProgram, MyWallet, and many more while updating them from time to time to better suit our customers’ evolving needs and demands.
+      - generic [ref=e2660]:
+        - heading "Booking Flights with MakeMyTrip" [level=2] [ref=e2661]
+        - generic [ref=e2662]: At MakeMyTrip, you can find the best of deals and cheap air tickets to any place you want by booking your tickets on our website or app. Being India’s leading website for hotel, flight, and holiday bookings, MakeMyTrip helps you book flight tickets that are affordable and customized to your convenience. With customer satisfaction being our ultimate goal, we also have a 24/7 dedicated helpline to cater to our customer’s queries and concerns. Serving over 5 million happy customers, we at MakeMyTrip are glad to fulfill the dreams of folks who need a quick and easy means to find air tickets. You can get a hold of the cheapest flight of your choice today while also enjoying the other available options for your travel needs with us.
+      - generic [ref=e2665]:
+        - heading "Domestic Flights with MakeMyTrip" [level=2] [ref=e2666]
+        - generic [ref=e2667]: MakeMyTrip is India's leading player for flight bookings. With the cheapest fare guarantee, experience great value at the lowest price. Instant notifications ensure current flight status, instant fare drops, amazing discounts, instant refunds and rebook options, price comparisons and many more interesting features.
+    - generic [ref=e2671]:
+      - generic [ref=e2672]:
+        - link [ref=e2673] [cursor=pointer]:
+          - /url: https://www.instagram.com/makemytrip/
+        - link [ref=e2675] [cursor=pointer]:
+          - /url: https://x.com/makemytrip
+        - link [ref=e2677] [cursor=pointer]:
+          - /url: https://in.linkedin.com/company/makemytrip.com?open=outside
+        - link [ref=e2679] [cursor=pointer]:
+          - /url: https://www.facebook.com/makemytrip/
+      - paragraph [ref=e2682]: © 2026 MakeMyTrip (India) Limited
+```
+
+# Test source
+
+```ts
+  1  | import {test} from '@playwright/test';
+  2  | 
+  3  | // test('inbuild fixtures', async({browser}) => {
+  4  | //   const context = await browser.newContext();
+  5  | //   const page = await context.newPage();
+  6  | //   await page.goto('https://www.flipkart.com/');
+  7  | 
+  8  | //   const context2 = await browser.newContext();
+  9  | //   const page3 = await context2.newPage();
+  10 | //   await page3.goto('https://demoqa.com/webtables');
+  11 |   
+  12 | //   const context3 = await browser.newContext({
+  13 | //     recordVideo : {
+  14 | //       dir :'./videos/'
+  15 | //     }
+  16 | //   });
+  17 | 
+  18 | //   const page4 = await context3.newPage();
+  19 | //   await page4.goto('https://assertqa.com/practice/webtables');
+  20 | //   const page5 = await context3.newPage();
+  21 | //   await page5.goto('https://www.amazon.in/');
+  22 |   
+  23 | //   await page5.locator('#twotabsearchtextbox').fill('samsung s26 ultra 5g mobile');
+  24 | //   await page5.locator('#nav-search-submit-button').click();
+  25 | // })
+  26 | 
+  27 | // test('learning XPath', async({page}) => {
+  28 | //   await page.goto('https://www.amazon.in/');
+  29 | //   await page.locator('[id="twotabsearchtextbox"]').fill('samsung s25 ultra 5g mobile');
+  30 | //   await page.locator('#nav-search-submit-button').click();
+  31 | //   // await page.waitForTimeout(2000);
+  32 | //   // page.locator('//h2[contains(@aria-label,"Galaxy S26 Ultra 5G")][1]').click();
+  33 | // })
+  34 | 
+  35 | test('make my trip', async({page}) => {
+  36 |   await page.goto('https://www.makemytrip.com/?msockid=0fb1ea2dedc8610f1f49fc72ecb760f5');
+> 37 |   await page.locator('//span[@class="commonModal__close"]').click();
+     |                                                             ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  38 |   await page.locator('.chNavIcon.appendBottom2.chSprite.chTrains.inactive').click();
+  39 |   await page.waitForTimeout(3000);
+  40 | })
+```

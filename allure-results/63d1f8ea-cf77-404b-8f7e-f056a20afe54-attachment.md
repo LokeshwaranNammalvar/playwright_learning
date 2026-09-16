@@ -1,0 +1,222 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: learning.spec.js >> make my trip
+- Location: tests\learning.spec.js:35:5
+
+# Error details
+
+```
+TypeError: page.locator(...).click(...).fill is not a function
+```
+
+```
+Error: locator.click: Test ended.
+Call log:
+  - waiting for locator('text="rsw_inputBox selectRailCity"')
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - img "Make My Trip" [ref=e8] [cursor=pointer]
+      - list [ref=e9]:
+        - listitem [ref=e10] [cursor=pointer]:
+          - generic [ref=e13]:
+            - paragraph [ref=e14]: List Your Property
+            - paragraph [ref=e15]: Grow your business!
+        - listitem [ref=e16] [cursor=pointer]:
+          - img "myBizLogo" [ref=e18]
+          - generic [ref=e19]:
+            - paragraph [ref=e20]: Introducing myBiz
+            - paragraph [ref=e21]: Business Travel Solution
+        - listitem [ref=e22] [cursor=pointer]:
+          - generic [ref=e25]:
+            - paragraph [ref=e26]: My Trips
+            - paragraph [ref=e27]: Manage your bookings
+        - listitem [ref=e28] [cursor=pointer]:
+          - generic "Wishlist" [ref=e30]
+          - generic [ref=e31]:
+            - paragraph [ref=e32]: Wishlist
+            - paragraph [ref=e33]: Save favourites
+        - listitem [ref=e34] [cursor=pointer]:
+          - paragraph [ref=e39]: Login or Create Account
+    - navigation [ref=e42]:
+      - list [ref=e43]:
+        - listitem [ref=e44]:
+          - link "Flights" [ref=e46] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/flights/
+        - listitem [ref=e50]:
+          - link "Hotels" [ref=e52] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/hotels/
+        - listitem [ref=e56]:
+          - link "Villas & Homestays" [ref=e58] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/homestays/
+        - listitem [ref=e62]:
+          - link "Holiday Packages" [ref=e64] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/holidays-india/
+        - listitem [ref=e68]:
+          - link "Trains" [ref=e70] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/railways/
+        - listitem [ref=e74]:
+          - link "Buses" [ref=e76] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/bus-tickets/
+        - listitem [ref=e80]:
+          - link "Cabs" [ref=e82] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/cabs/
+        - listitem [ref=e86]:
+          - link "Tours & Attractions" [ref=e88] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/activities/
+        - listitem [ref=e92]:
+          - link "Visa" [ref=e94] [cursor=pointer]:
+            - /url: https://visa.makemytrip.com/
+        - listitem [ref=e98]:
+          - link "Cruise" [ref=e100] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/cruise/
+          - generic [ref=e104]: new
+        - listitem [ref=e105]:
+          - link "Forex Card & Currency" [ref=e107] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/forex/
+        - listitem [ref=e111]:
+          - link "Travel Insurance" [ref=e113] [cursor=pointer]:
+            - /url: https://www.makemytrip.com/travel-insurance/
+  - generic [ref=e119]:
+    - generic [ref=e121]:
+      - generic [ref=e122]:
+        - generic [ref=e123] [cursor=pointer]: Book Train Tickets
+        - generic [ref=e124] [cursor=pointer]: Check PNR Status
+        - generic [ref=e125] [cursor=pointer]: Live Train Status
+        - generic [ref=e127]:
+          - heading "Live Train Status" [level=1] [ref=e128]
+          - paragraph [ref=e129]: IRCTC Authorized e-ticketing
+      - generic [ref=e130]:
+        - generic [ref=e131]:
+          - generic [ref=e133]:
+            - generic [ref=e134]: Train Number / Name
+            - textbox "Train Number / Name" [ref=e135] [cursor=pointer]: Select Train No
+            - paragraph
+          - generic [ref=e137]:
+            - generic [ref=e138]: Your Stop
+            - textbox "Your Stop Select Station (optional)" [ref=e139] [cursor=pointer]
+            - paragraph [ref=e141]:
+              - generic [ref=e142]: Select Station
+              - generic [ref=e143]: (optional)
+          - generic [ref=e145]:
+            - generic [ref=e146]: Train Start Date
+            - textbox "Train Start Date Select date (optional)" [ref=e147] [cursor=pointer]
+            - paragraph [ref=e149]:
+              - generic [ref=e150]: Select date
+              - generic [ref=e151]: (optional)
+        - paragraph [ref=e152]:
+          - generic: CHECK STATUS
+    - main [ref=e153]
+    - main [ref=e154]:
+      - generic [ref=e156]:
+        - generic [ref=e157]:
+          - paragraph [ref=e158]
+          - paragraph [ref=e159]
+        - generic [ref=e160] [cursor=pointer]
+      - main [ref=e162]:
+        - generic [ref=e164]:
+          - generic [ref=e165]:
+            - paragraph [ref=e166]
+            - paragraph [ref=e167]
+          - generic [ref=e168] [cursor=pointer]
+        - link [ref=e174] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e175]:
+            - generic [ref=e179]:
+              - paragraph [ref=e180]
+              - paragraph [ref=e181]
+              - paragraph [ref=e183]
+              - paragraph [ref=e184]
+            - paragraph [ref=e185]
+          - generic [ref=e186]:
+            - generic [ref=e190]:
+              - paragraph [ref=e191]
+              - paragraph [ref=e192]
+              - paragraph [ref=e194]
+              - paragraph [ref=e195]
+            - paragraph [ref=e196]
+          - generic [ref=e197]:
+            - generic [ref=e201]:
+              - paragraph [ref=e202]
+              - paragraph [ref=e203]
+              - paragraph [ref=e205]
+              - paragraph [ref=e206]
+            - paragraph [ref=e207]
+  - contentinfo [ref=e208]:
+    - generic [ref=e212]:
+      - generic [ref=e213]:
+        - link [ref=e214] [cursor=pointer]:
+          - /url: https://www.instagram.com/makemytrip/
+        - link [ref=e216] [cursor=pointer]:
+          - /url: https://x.com/makemytrip
+        - link [ref=e218] [cursor=pointer]:
+          - /url: https://in.linkedin.com/company/makemytrip.com?open=outside
+        - link [ref=e220] [cursor=pointer]:
+          - /url: https://www.facebook.com/makemytrip/
+      - paragraph [ref=e223]: © 2026 MakeMyTrip (India) Limited
+```
+
+# Test source
+
+```ts
+  1  | import {test} from '@playwright/test';
+  2  | 
+  3  | // test('inbuild fixtures', async({browser}) => {
+  4  | //   const context = await browser.newContext();
+  5  | //   const page = await context.newPage();
+  6  | //   await page.goto('https://www.flipkart.com/');
+  7  | 
+  8  | //   const context2 = await browser.newContext();
+  9  | //   const page3 = await context2.newPage();
+  10 | //   await page3.goto('https://demoqa.com/webtables');
+  11 |   
+  12 | //   const context3 = await browser.newContext({
+  13 | //     recordVideo : {
+  14 | //       dir :'./videos/'
+  15 | //     }
+  16 | //   });
+  17 | 
+  18 | //   const page4 = await context3.newPage();
+  19 | //   await page4.goto('https://assertqa.com/practice/webtables');
+  20 | //   const page5 = await context3.newPage();
+  21 | //   await page5.goto('https://www.amazon.in/');
+  22 |   
+  23 | //   await page5.locator('#twotabsearchtextbox').fill('samsung s26 ultra 5g mobile');
+  24 | //   await page5.locator('#nav-search-submit-button').click();
+  25 | // })
+  26 | 
+  27 | // test('learning XPath', async({page}) => {
+  28 | //   await page.goto('https://www.amazon.in/');
+  29 | //   await page.locator('[id="twotabsearchtextbox"]').fill('samsung s25 ultra 5g mobile');
+  30 | //   await page.locator('#nav-search-submit-button').click();
+  31 | //   // await page.waitForTimeout(2000);
+  32 | //   // page.locator('//h2[contains(@aria-label,"Galaxy S26 Ultra 5G")][1]').click();
+  33 | // })
+  34 | 
+  35 | test('make my trip', async({page}) => {
+  36 |   await page.goto('https://www.makemytrip.com/');
+  37 |   try{
+  38 |   await page.locator('//span[@class="commonModal__close"]').click();
+  39 |   } catch(error)
+  40 |   {
+  41 |     console.log("popup not displayed");
+  42 |   }
+  43 |   await page.locator('.chNavIcon.appendBottom2.chSprite.chTrains.inactive').click();
+  44 |   await page.locator('//span[text()="Live Train Status"]').click();
+> 45 |   await page.locator('"rsw_inputBox selectRailCity"').click().fill("chennai");
+     |                                                       ^ Error: locator.click: Test ended.
+  46 |   await page.waitForTimeout(3000);
+  47 | })
+```
